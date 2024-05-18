@@ -63,8 +63,8 @@
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Flag_of_Luxembourg.svg/800px-Flag_of_Luxembourg.svg.png",
             "result": true,
             "semi": 1,
-            "puan1": 1,
-            "puan2": 2
+            "puan1": 0.8,
+            "puan2": 1.2
         },
         {
             "id": "7",
@@ -272,7 +272,7 @@
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/1280px-Flag_of_Croatia.svg.png",
             "result": true,
             "semi": 2,
-            "puan1": 1,
+            "puan1": 1.4,
             "puan2": 1.2
         },
         {
@@ -294,7 +294,7 @@
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/2560px-Flag_of_Greece.svg.png",
             "result": true,
             "semi": 2,
-            "puan1": 11,
+            "puan1": 5,
             "puan2": 5
         },
         {

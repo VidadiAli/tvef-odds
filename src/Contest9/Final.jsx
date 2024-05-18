@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { mainUrl } from '../Data/Data'
+import { FaArrowUp } from "react-icons/fa";
+import { FaArrowDown } from "react-icons/fa";
 
 const Final = () => {
     const [finalData, setFinalData] = useState([]);
@@ -22,8 +24,6 @@ const Final = () => {
     }, []);
 
 
-    console.log(finalData);
-    console.log(pointsData)
 
     let amount = 0, mainIndex = 0, n = pointsData.length, leader;
     for (let j = 0; j < pointsData.length; j++) {
@@ -55,6 +55,39 @@ const Final = () => {
         total += e;
     });
 
+
+    let indexArray = [], listOfUp = [], listOfDown = [];
+    finalData && finalData.forEach((e) => {
+        indexArray.push(e.id);
+    });
+
+    if (!localStorage.getItem('indexArrayOfFinal')) indexArray = [];
+    else {
+        const localArrayFinal = localStorage.getItem('indexArrayOfFinal').split(',')
+        console.log(indexArray)
+        console.log(localArrayFinal)
+        indexArray && indexArray.forEach((e) => {
+            if (indexArray.indexOf(e) < localArrayFinal.indexOf(e)) {
+                listOfUp.push(e);
+            }
+            else if (indexArray.indexOf(e) > localArrayFinal.indexOf(e)) {
+                listOfDown.push(e)
+            }
+            else {
+                finalData[indexArray.indexOf(e)].countryName = finalData[indexArray.indexOf(e)].countryName;
+            }
+        })
+    }
+
+    let indexArrayForLocal = [];
+    finalData && finalData.forEach((e) => {
+        indexArrayForLocal.push(e.id);
+        localStorage.setItem('indexArrayOfFinal', indexArrayForLocal);
+    });
+
+
+
+
     return (
         <div className='final'>
             <h2>Who will be winner of TVEF Edition 9?</h2>
@@ -66,7 +99,11 @@ const Final = () => {
                 finalData && finalData.map((e, index) => {
                     if (e.result) {
                         return <div key={e.id} className='box'>
-                            <span>{index + 1}</span>
+                            <span className='arrow'>{index + 1}
+                                {listOfDown.includes(e.id) ? <FaArrowDown className='arrows arrow-down' /> : ''}
+
+                                {listOfUp.includes(e.id) ? <FaArrowUp className='arrows arrow-up' /> : ''}
+                            </span>
                             <img src={e.flag} alt="" />
                             <div>
                                 <span>{e.countryName} - </span>
@@ -75,6 +112,9 @@ const Final = () => {
                             <span>{`${(((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) >= 1 ? (((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) : '>1'}%`}</span>
                             <span>{e.puan1}</span>
                             <span>{e.puan2}</span>
+                            <span>{e.puan1 + 0.5}</span>
+                            <span>{((e.puan1 + e.puan2 / 2).toFixed(1)).endsWith(0) ? (e.puan1 + e.puan2 / 2).toFixed() : (e.puan1 + e.puan2 / 2).toFixed(1)}</span>
+                            <span>{(((e.puan1 + e.puan2) / 2).toFixed(1)).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed() : ((e.puan1 + e.puan2) / 2).toFixed(1)}</span>
                         </div>
                     }
                 })

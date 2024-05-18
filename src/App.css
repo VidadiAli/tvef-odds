@@ -16,6 +16,7 @@ h2 {
   gap: 5px;
   background-color: rgb(235, 235, 235);
   padding: 10px;
+  overflow: auto;
 }
 
 .main-section>.final>div {
@@ -23,6 +24,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 3px;
+  height: 100%;
 }
 
 .main-section>.final>div span {
@@ -31,7 +33,7 @@ h2 {
   border: 1px solid lightgray;
   display: inline-block;
   height: 100%;
-  width: 40px;
+  min-width: 40px;
   text-align: center;
   font-size: 80%;
   background-color: white;
@@ -42,6 +44,8 @@ h2 {
   height: 20px;
   border-radius: 50%;
   object-fit: cover;
+  position: sticky;
+  left: 0;
 }
 
 .main-section>.final>.box:nth-child(1) span {
@@ -52,7 +56,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 3px;
-  width: 200px;
+  min-width: 190px;
   border: 1px solid lightgray;
   border-radius: 3px;
   padding: 3px;
@@ -77,6 +81,8 @@ h2 {
   font-size: 160%;
   text-align: center;
   padding: 0 25px;
+  position: sticky;
+  left: 0;
 }
 
 .main-section>.final>dir {
@@ -86,8 +92,35 @@ h2 {
   gap: 5px;
   padding: 5px 15px;
   font-size: 85%;
+  position: sticky;
+  left: 0;
 }
 
 .main-section>.final>dir>h2 {
   font-size: 100%;
+}
+
+
+
+.main-section>.final>div>.arrow {
+  position: relative;
+  text-align: right;
+  min-width: 35px;
+}
+
+.main-section>.final>div>.arrow>.arrows {
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+}
+
+.main-section>.final>div>.arrow>.arrow-down {
+  color: red;
+}
+
+.main-section>.final>div>.arrow>.arrow-up {
+  color: green;
 }
