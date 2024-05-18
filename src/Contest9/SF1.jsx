@@ -25,7 +25,7 @@ const SF1 = () => {
 
 
 
-    let amount = 0, mainIndex = 0, n = pointsData.length, leader;
+    let amount = 0, mainIndex = 0, n = pointsData.length, leader1, leader2, leader3;
     for (let j = 0; j < pointsData.length; j++) {
         for (let i = 0; i < n; i++) {
             if (pointsData[i] > amount) {
@@ -42,7 +42,9 @@ const SF1 = () => {
         finalData[n - 1] = finalData[mainIndex]
         finalData[mainIndex] = changeElement2;
 
-        leader = finalData[0].countryName;
+        leader1 = finalData[0].countryName;
+        leader2 = finalData[1].countryName;
+        leader3 = finalData[2].countryName;
 
         n--;
         mainIndex = 0
@@ -90,10 +92,11 @@ const SF1 = () => {
 
     return (
         <div className='final'>
-            <h2>Who will be winner of TVEF Edition 9?</h2>
+            <h2>Who will qualify for the Final from Semi-final 1?</h2>
             <dir>
                 <span>Bookmakers have predicted</span>
-                <h2> {leader}</h2>
+                <h2>{leader1}, {leader2}, {leader3}</h2>
+                <span>and 7 others</span>
             </dir>
             {
                 finalData && finalData.map((e, index) => {
@@ -109,7 +112,7 @@ const SF1 = () => {
                                 <span>{e.countryName} - </span>
                                 <span> {e.singerName}</span>
                             </div>
-                            <span>{`${(((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) >= 1 ? (((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) : '>1'}%`}</span>
+                            <span>{`${((total / (e.puan1 + e.puan2))).toFixed(0) <= 95 ? ((total / (e.puan1 + e.puan2))).toFixed(0) : '95'}%`}</span>
                             <span>{e.puan1}</span>
                             <span>{e.puan2}</span>
                             <span>{e.puan1 + 0.5}</span>
