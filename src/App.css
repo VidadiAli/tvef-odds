@@ -1,0 +1,93 @@
+.main-section>.head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-section>.head>h1,
+h2 {
+  padding: 5px 0;
+  margin: 0;
+}
+
+.main-section>.final {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background-color: rgb(235, 235, 235);
+  padding: 10px;
+}
+
+.main-section>.final>div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.main-section>.final>div span {
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  display: inline-block;
+  height: 100%;
+  width: 40px;
+  text-align: center;
+  font-size: 80%;
+  background-color: white;
+}
+
+.main-section>.final>div>img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.main-section>.final>.box:nth-child(1) span {
+  background-color: lightskyblue;
+}
+
+.main-section>.final>div>div {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  width: 200px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 3px;
+  background-color: white;
+}
+
+.main-section>.final>.box:nth-child(1)>div {
+  background-color: lightskyblue !important;
+}
+
+.main-section>.final>div>div>span {
+  width: auto;
+  border: none;
+  padding: 0;
+}
+
+.main-section>.final>div>div>span:nth-child(1) {
+  font-weight: 600;
+}
+
+.main-section>.final>h2 {
+  font-size: 160%;
+  text-align: center;
+  padding: 0 25px;
+}
+
+.main-section>.final>dir {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 5px 15px;
+  font-size: 85%;
+}
+
+.main-section>.final>dir>h2 {
+  font-size: 100%;
+}
