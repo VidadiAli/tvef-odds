@@ -61,6 +61,19 @@ h2 {
   border-radius: 3px;
   padding: 3px;
   background-color: white;
+  position: relative;
+}
+
+.main-section>.final>div>div>a {
+  position: absolute;
+  right: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-section>.final>div>div>a>.youtube-link {
+  color: gray;
+  width: 15px;
 }
 
 .main-section>.final>.box:nth-child(1)>div {
@@ -89,6 +102,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 5px;
   padding: 5px 15px;
   font-size: 85%;

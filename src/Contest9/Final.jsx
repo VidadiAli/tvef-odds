@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { mainUrl } from '../Data/Data'
 import { FaArrowUp } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 
 const Final = () => {
     const [finalData, setFinalData] = useState([]);
@@ -108,8 +109,9 @@ const Final = () => {
                             <div>
                                 <span>{e.countryName} - </span>
                                 <span> {e.singerName}</span>
+                                <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
                             </div>
-                            <span>{`${(((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) >= 1 ? (((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) : '>1'}%`}</span>
+                            <span>{`${(((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) >= 1 ? (((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) : '<1'}%`}</span>
                             <span>{e.puan1}</span>
                             <span>{e.puan2}</span>
                             <span>{e.puan1 + 0.5}</span>

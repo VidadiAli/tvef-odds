@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { mainUrl } from '../Data/Data'
 import { FaArrowUp } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 
 const SF1 = () => {
     const [finalData, setFinalData] = useState([]);
@@ -111,11 +112,12 @@ const SF1 = () => {
                             <div>
                                 <span>{e.countryName} - </span>
                                 <span> {e.singerName}</span>
+                                <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
                             </div>
-                            <span>{`${((total / (e.puan1 + e.puan2))).toFixed(0) <= 95 ? ((total / (e.puan1 + e.puan2))).toFixed(0) : '95'}%`}</span>
+                            <span>{`${((200 / (e.puan1 + e.puan2))).toFixed(0) <= 98 ? ((200 / (e.puan1 + e.puan2))).toFixed(0) : '98'}%`}</span>
                             <span>{e.puan1}</span>
                             <span>{e.puan2}</span>
-                            <span>{e.puan1 + 0.5}</span>
+                            <span>{((e.puan1 + e.puan2) / 2) < 2 ? ((e.puan1 + e.puan2) / 2 + 0.03).toFixed(2) : (((e.puan1 + e.puan2) / 2).toFixed(1).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed(0) : ((e.puan1 + e.puan2) / 2).toFixed(1))}</span>
                         </div>
                     }
                 })

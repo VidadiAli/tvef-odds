@@ -7,6 +7,7 @@
             "musicName": "Mama",
             "flag": "https://cdn.britannica.com/37/5137-050-627F0A5F/flag-West-Virginia-Louisiana-Purchase-Exposition-design-1929.jpg",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 10,
             "puan2": 9
@@ -18,6 +19,7 @@
             "musicName": "Mama",
             "flag": "https://flagsireland.com/cdn/shop/products/MoroccoFlag.png?v=1679324882",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 3,
             "puan2": 3.5
@@ -29,6 +31,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Flag_of_Uganda.svg/1200px-Flag_of_Uganda.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 200,
             "puan2": 100
@@ -40,6 +43,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/1200px-Flag_of_Finland.svg.png",
             "result": true,
+            "youtubeLink": "https://www.youtube.com/watch?v=fBv0mr7SWTs",
             "semi": 1,
             "puan1": 90,
             "puan2": 60
@@ -51,6 +55,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/1200px-Flag_of_the_Netherlands.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 50,
             "puan2": 50
@@ -62,9 +67,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Flag_of_Luxembourg.svg/800px-Flag_of_Luxembourg.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
-            "puan1": 0.8,
-            "puan2": 1.2
+            "puan1": 1,
+            "puan2": 1
         },
         {
             "id": "7",
@@ -73,8 +79,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Norway.svg/1200px-Flag_of_Norway.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
-            "puan1": 2.5,
+            "puan1": 2.7,
             "puan2": 2
         },
         {
@@ -84,6 +91,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/800px-Flag_of_Burkina_Faso.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 90,
             "puan2": 100
@@ -95,6 +103,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Andorra.svg/2560px-Flag_of_Andorra.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 50,
             "puan2": 50
@@ -102,12 +111,13 @@
         {
             "id": "10",
             "countryName": "Belgium",
-            "singerName": "Sah!bx",
+            "singerName": "Sahib XXXV",
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Belgium.svg/294px-Flag_of_Belgium.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
-            "puan1": 60,
+            "puan1": 20,
             "puan2": 40
         },
         {
@@ -117,6 +127,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Serbia.svg/800px-Flag_of_Serbia.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 50,
             "puan2": 100
@@ -128,8 +139,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/383px-Flag_of_Scotland.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
-            "puan1": 50,
+            "puan1": 20,
             "puan2": 50
         },
         {
@@ -139,9 +151,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 5,
-            "puan2": 8
+            "puan2": 15
         },
         {
             "id": "14",
@@ -150,6 +163,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/1200px-Flag_of_Poland.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 60,
             "puan2": 40
@@ -161,9 +175,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Azerbaijan.svg/1200px-Flag_of_Azerbaijan.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
-            "puan1": 45,
-            "puan2": 55
+            "puan1": 20,
+            "puan2": 25
         },
         {
             "id": "16",
@@ -172,9 +187,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1280px-Flag_of_Ukraine.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 10,
-            "puan2": 2
+            "puan2": 15
         },
         {
             "id": "17",
@@ -183,6 +199,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/640px-Flag_of_Canada_%28Pantone%29.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 35,
             "puan2": 75
@@ -194,6 +211,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Georgia.svg",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 20,
             "puan2": 80
@@ -205,6 +223,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1200px-Flag_of_Russia.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 0,
             "puan1": 40,
             "puan2": 40
@@ -216,9 +235,10 @@
             "musicName": "Mama",
             "flag": "https://cdn11.bigcommerce.com/s-2lbnjvmw4d/images/stencil/1280x1280/products/3177/5207/switzerlandflag__89866.1614611693.jpg",
             "result": true,
+            "youtubeLink": "https://www.youtube.com/watch?v=5ACtlJvEu5w",
             "semi": 0,
             "puan1": 8,
-            "puan2": 7
+            "puan2": 13
         },
         {
             "id": "21",
@@ -227,8 +247,9 @@
             "musicName": "Mama",
             "flag": "https://m.media-amazon.com/images/I/61ekcr30fgL._AC_UF894,1000_QL80_.jpg",
             "result": true,
+            "youtubeLink": "",
             "semi": 0,
-            "puan1": 50,
+            "puan1": 10,
             "puan2": 20
         },
         {
@@ -238,9 +259,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
-            "puan1": 7,
-            "puan2": 12
+            "puan1": 20,
+            "puan2": 20
         },
         {
             "id": "23",
@@ -249,6 +271,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Paraguay.svg/1280px-Flag_of_Paraguay.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 10,
             "puan2": 4.5
@@ -260,6 +283,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Israel.svg/800px-Flag_of_Israel.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 5,
             "puan2": 2.4
@@ -271,9 +295,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/1280px-Flag_of_Croatia.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
-            "puan1": 1.4,
-            "puan2": 1.2
+            "puan1": 1.3,
+            "puan2": 1
         },
         {
             "id": "26",
@@ -282,8 +307,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/383px-Flag_of_Germany.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
-            "puan1": 0,
+            "puan1": 10,
             "puan2": 15
         },
         {
@@ -293,8 +319,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/2560px-Flag_of_Greece.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
-            "puan1": 5,
+            "puan1": 11,
             "puan2": 5
         },
         {
@@ -304,6 +331,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Flag_of_Slovenia.svg/1200px-Flag_of_Slovenia.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 10.3,
             "puan2": 10.5
@@ -315,6 +343,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/2560px-Flag_of_Italy.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 18,
             "puan2": 10
@@ -326,6 +355,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/255px-Flag_of_France.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 9,
             "puan2": 12
@@ -337,9 +367,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 1.5,
-            "puan2": 2
+            "puan2": 5
         },
         {
             "id": "32",
@@ -348,6 +379,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/640px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 17,
             "puan2": 10
@@ -359,6 +391,7 @@
             "musicName": "Mama",
             "flag": "https://cdn.britannica.com/79/4479-050-6EF87027/flag-Stars-and-Stripes-May-1-1795.jpg",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 10,
             "puan2": 11
@@ -370,6 +403,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/800px-Flag_of_Portugal.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 11,
             "puan2": 8.9
@@ -381,6 +415,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/1200px-Flag_of_South_Korea.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 13,
             "puan2": 13
@@ -392,6 +427,7 @@
             "musicName": "Mama",
             "flag": "https://cdn.britannica.com/55/1455-004-5897143C/Flag-Hungary.jpg",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 12,
             "puan2": 8.5
@@ -403,9 +439,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Flag_of_Palestine_-_short_triangle.svg/1280px-Flag_of_Palestine_-_short_triangle.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
-            "puan1": 8.5,
-            "puan2": 1.1
+            "puan1": 10,
+            "puan2": 7.1
         },
         {
             "id": "38",
@@ -414,6 +451,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/2560px-Flag_of_Romania.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 20,
             "puan2": 10
@@ -425,6 +463,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 30,
             "puan2": 2.1
@@ -436,8 +475,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
-            "puan1": 10,
+            "puan1": 6,
             "puan2": 1.7
         }
     ],
@@ -449,9 +489,10 @@
             "musicName": "Mama",
             "flag": "https://cdn.britannica.com/37/5137-050-627F0A5F/flag-West-Virginia-Louisiana-Purchase-Exposition-design-1929.jpg",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 1,
-            "puan2": 2
+            "puan2": 1.3
         },
         {
             "id": "2",
@@ -460,6 +501,7 @@
             "musicName": "Mama",
             "flag": "https://flagsireland.com/cdn/shop/products/MoroccoFlag.png?v=1679324882",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 1,
             "puan2": 1.5
@@ -471,9 +513,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Flag_of_Uganda.svg/1200px-Flag_of_Uganda.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 10,
-            "puan2": 14
+            "puan2": 12
         },
         {
             "id": "4",
@@ -482,9 +525,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Flag_of_Finland.svg/1200px-Flag_of_Finland.svg.png",
             "result": true,
+            "youtubeLink": "https://www.youtube.com/watch?v=fBv0mr7SWTs",
             "semi": 1,
             "puan1": 10,
-            "puan2": 12
+            "puan2": 10
         },
         {
             "id": "5",
@@ -493,8 +537,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Flag_of_the_Netherlands.svg/1200px-Flag_of_the_Netherlands.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
-            "puan1": 0,
+            "puan1": 1,
             "puan2": 15
         },
         {
@@ -504,9 +549,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Flag_of_Luxembourg.svg/800px-Flag_of_Luxembourg.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
-            "puan1": 1.1,
-            "puan2": 0.1
+            "puan1": 1.01,
+            "puan2": 1.07
         },
         {
             "id": "7",
@@ -515,6 +561,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Norway.svg/1200px-Flag_of_Norway.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 1.3,
             "puan2": 1
@@ -526,6 +573,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Flag_of_Burkina_Faso.svg/800px-Flag_of_Burkina_Faso.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 18,
             "puan2": 10
@@ -537,6 +585,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Flag_of_Andorra.svg/2560px-Flag_of_Andorra.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 9,
             "puan2": 9
@@ -544,10 +593,11 @@
         {
             "id": "10",
             "countryName": "Belgium",
-            "singerName": "Sah!bx",
+            "singerName": "Sahib XXXV",
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Flag_of_Belgium.svg/294px-Flag_of_Belgium.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 8,
             "puan2": 2
@@ -559,6 +609,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Flag_of_Serbia.svg/800px-Flag_of_Serbia.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 11,
             "puan2": 10
@@ -570,6 +621,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Flag_of_Scotland.svg/383px-Flag_of_Scotland.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 10,
             "puan2": 9
@@ -581,8 +633,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/4/41/Flag_of_Austria.svg",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
-            "puan1": 1.8,
+            "puan1": 1.2,
             "puan2": 1.7
         },
         {
@@ -592,6 +645,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/1200px-Flag_of_Poland.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 11,
             "puan2": 13
@@ -603,9 +657,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Flag_of_Azerbaijan.svg/1200px-Flag_of_Azerbaijan.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
-            "puan1": 5,
-            "puan2": 4.5
+            "puan1": 4,
+            "puan2": 4
         },
         {
             "id": "16",
@@ -614,8 +669,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/1280px-Flag_of_Ukraine.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
-            "puan1": 2,
+            "puan1": 3,
             "puan2": 1.8
         },
         {
@@ -625,8 +681,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/640px-Flag_of_Canada_%28Pantone%29.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
-            "puan1": 15,
+            "puan1": 8,
             "puan2": 10
         },
         {
@@ -636,6 +693,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Flag_of_Georgia.svg",
             "result": true,
+            "youtubeLink": "",
             "semi": 1,
             "puan1": 10,
             "puan2": 10
@@ -649,9 +707,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/4/45/Flag_of_Ireland.svg",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 1,
-            "puan2": 2
+            "puan2": 5
         },
         {
             "id": "2",
@@ -660,8 +719,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Flag_of_Paraguay.svg/1280px-Flag_of_Paraguay.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
-            "puan1": 6,
+            "puan1": 4,
             "puan2": 1.5
         },
         {
@@ -671,9 +731,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Israel.svg/800px-Flag_of_Israel.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 1,
-            "puan2": 2.4
+            "puan2": 1.5
         },
         {
             "id": "4",
@@ -682,9 +743,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Flag_of_Croatia.svg/1280px-Flag_of_Croatia.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 1,
-            "puan2": 1.2
+            "puan2": 1.3
         },
         {
             "id": "5",
@@ -693,8 +755,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/383px-Flag_of_Germany.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
-            "puan1": 0,
+            "puan1": 1,
             "puan2": 15
         },
         {
@@ -704,6 +767,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Greece.svg/2560px-Flag_of_Greece.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 11,
             "puan2": 1
@@ -715,6 +779,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Flag_of_Slovenia.svg/1200px-Flag_of_Slovenia.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 1.3,
             "puan2": 2.5
@@ -726,6 +791,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Flag_of_Italy.svg/2560px-Flag_of_Italy.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 18,
             "puan2": 10
@@ -737,6 +803,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/255px-Flag_of_France.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 9,
             "puan2": 2
@@ -748,8 +815,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9a/Flag_of_Spain.svg/1200px-Flag_of_Spain.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
-            "puan1": 0.5,
+            "puan1": 1,
             "puan2": 1
         },
         {
@@ -759,6 +827,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/640px-Flag_of_the_United_Kingdom_%281-2%29.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 7,
             "puan2": 10
@@ -770,6 +839,7 @@
             "musicName": "Mama",
             "flag": "https://cdn.britannica.com/79/4479-050-6EF87027/flag-Stars-and-Stripes-May-1-1795.jpg",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 10,
             "puan2": 9
@@ -781,6 +851,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/800px-Flag_of_Portugal.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 11,
             "puan2": 1.7
@@ -792,6 +863,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Flag_of_South_Korea.svg/1200px-Flag_of_South_Korea.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 11,
             "puan2": 13
@@ -803,6 +875,7 @@
             "musicName": "Mama",
             "flag": "https://cdn.britannica.com/55/1455-004-5897143C/Flag-Hungary.jpg",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 12,
             "puan2": 4.5
@@ -814,9 +887,10 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Flag_of_Palestine_-_short_triangle.svg/1280px-Flag_of_Palestine_-_short_triangle.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
-            "puan1": 0.5,
-            "puan2": 1.1
+            "puan1": 2.5,
+            "puan2": 6
         },
         {
             "id": "17",
@@ -825,8 +899,9 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flag_of_Romania.svg/2560px-Flag_of_Romania.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
-            "puan1": 10,
+            "puan1": 5,
             "puan2": 10
         },
         {
@@ -836,6 +911,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/4/41/Flag_of_India.svg/1200px-Flag_of_India.svg.png",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 1,
             "puan2": 2.1
@@ -847,6 +923,7 @@
             "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Bulgaria.svg",
             "result": true,
+            "youtubeLink": "",
             "semi": 2,
             "puan1": 1.7,
             "puan2": 1.7
