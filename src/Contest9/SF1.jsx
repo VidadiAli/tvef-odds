@@ -53,11 +53,6 @@ const SF1 = () => {
     };
 
 
-    let total = 0;
-    pointsData.forEach((e) => {
-        total += e;
-    });
-
 
     let indexArray = [], listOfUp = [], listOfDown = [];
     finalData && finalData.forEach((e) => {
