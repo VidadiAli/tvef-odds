@@ -1,15 +1,3 @@
-.main-section>.head {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.main-section>.head>h1,
-h2 {
-  padding: 5px 0;
-  margin: 0;
-}
-
 .main-section>.final {
   display: flex;
   flex-direction: column;
