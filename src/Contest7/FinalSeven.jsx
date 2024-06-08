@@ -90,6 +90,23 @@ const FinalSeven = () => {
                             }
                         })
                     }
+
+                    <dir className="nq">
+                        <h1>Not Qualify</h1>
+                        <div>
+                            {
+                                finalData && finalData.map((e) => {
+                                    if (e.result === 0) {
+                                        return <div key={e.id}>
+                                            <img src={e.flag} alt={`flag of ${e.countryName}`} />
+                                            <span>{e.countryName} - </span>
+                                            <span>{e.singerName}</span>
+                                        </div>
+                                    }
+                                })
+                            }
+                        </div>
+                    </dir>
                 </div>
                 <div className='participants'>
                     {

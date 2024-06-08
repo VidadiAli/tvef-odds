@@ -66,23 +66,37 @@ const SF2Seven = () => {
                     </dir>
                     {
                         finalData && finalData.map((e, index) => {
-                            if (e.result) {
-                                return <div key={e.id} className='box'>
-                                    <span className='arrow'>{index + 1}</span>
-                                    <img src={e.flag} alt="" />
-                                    <div>
-                                        <span>{e.countryName} - </span>
-                                        <span>{e.singerName}</span>
-                                        <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
-                                    </div>
-                                    <span>{`${((200 / (e.puan1 + e.puan2))).toFixed(0) <= 98 ? ((200 / (e.puan1 + e.puan2))).toFixed(0) : '98'}%`}</span>
-                                    <span>{e.puan1}</span>
-                                    <span>{e.puan2}</span>
-                                    <span>{((e.puan1 + e.puan2) / 2) < 2 ? ((e.puan1 + e.puan2) / 2 + 0.03).toFixed(2) : (((e.puan1 + e.puan2) / 2).toFixed(1).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed(0) : ((e.puan1 + e.puan2) / 2).toFixed(1))}</span>
+                            return <div key={e.id} className='box'>
+                                <span className='arrow'>{index + 1}</span>
+                                <img src={e.flag} alt="" />
+                                <div>
+                                    <span>{e.countryName} - </span>
+                                    <span>{e.singerName}</span>
+                                    <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
                                 </div>
-                            }
+                                <span>{`${((200 / (e.puan1 + e.puan2))).toFixed(0) <= 98 ? ((200 / (e.puan1 + e.puan2))).toFixed(0) : '98'}%`}</span>
+                                <span>{e.puan1}</span>
+                                <span>{e.puan2}</span>
+                                <span>{((e.puan1 + e.puan2) / 2) < 2 ? ((e.puan1 + e.puan2) / 2 + 0.03).toFixed(2) : (((e.puan1 + e.puan2) / 2).toFixed(1).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed(0) : ((e.puan1 + e.puan2) / 2).toFixed(1))}</span>
+                            </div>
                         })
                     }
+                    <dir className="nq">
+                        <h1>Result of Semi-Final 2</h1>
+                        <div>
+                            {
+                                finalData && finalData.map((e) => {
+                                    if (e.result === 1) {
+                                        return <div key={e.id}>
+                                            <img src={e.flag} alt={`flag of ${e.countryName}`} />
+                                            <span>{e.countryName} - </span>
+                                            <span>{e.singerName}</span>
+                                        </div>
+                                    }
+                                })
+                            }
+                        </div>
+                    </dir>
                 </div>
                 <div className='participants'>
                     {
