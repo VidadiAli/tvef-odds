@@ -1,21 +1,21 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { mainUrl } from '../Data/Data'
-import { FaArrowUp } from "react-icons/fa";
-import { FaArrowDown } from "react-icons/fa";
+import { mainUrl7 } from '../Data/Data'
 import { FaYoutube } from "react-icons/fa";
-import Contest9 from './Contest9';
+import Contest7 from './Contest7'
 
-const Juri = () => {
+const FinalSeven = () => {
     const [finalData, setFinalData] = useState([]);
     const [pointsData, setPointsData] = useState([]);
 
+    let counts = 0;
+
     const callData = async () => {
-        const data = (await axios.get(`${mainUrl}final`)).data;
+        const data = (await axios.get(`${mainUrl7}final`)).data;
         setFinalData(data);
 
         data.forEach((element) => {
-            pointsData.push(element.puan1);
+            pointsData.push(element.puan1 + element.puan2);
             setPointsData(pointsData)
         });
     }
@@ -58,66 +58,34 @@ const Juri = () => {
     });
 
 
-    let indexArray = [], listOfUp = [], listOfDown = [];
-    finalData && finalData.forEach((e) => {
-        indexArray.push(e.id);
-    });
-
-    if (!localStorage.getItem('indexArrayOfJuri')) indexArray = [];
-    else {
-        const localArrayFinal = localStorage.getItem('indexArrayOfJuri').split(',')
-
-        indexArray && indexArray.forEach((e) => {
-            if (indexArray.indexOf(e) < localArrayFinal.indexOf(e)) {
-                listOfUp.push(e);
-            }
-            else if (indexArray.indexOf(e) > localArrayFinal.indexOf(e)) {
-                listOfDown.push(e)
-            }
-            else {
-                finalData[indexArray.indexOf(e)].countryName = finalData[indexArray.indexOf(e)].countryName;
-            }
-        })
-    }
-
-    let indexArrayForLocal = [];
-    finalData && finalData.forEach((e) => {
-        indexArrayForLocal.push(e.id);
-        localStorage.setItem('indexArrayOfJuri', indexArrayForLocal);
-    });
-
-
-
-
     return (
         <>
-            <Contest9 />
+            <Contest7 />
             <div className='contest-participants'>
                 <div className='final'>
-                    <h2>Who will be winner of Jury?</h2>
+                    <h2>Who will be winner of TVEF Edition 7?</h2>
                     <dir>
                         <span>Bookmakers have predicted</span>
                         <h2> {leader}</h2>
                     </dir>
                     {
-                        finalData && finalData.map((e, index) => {
-                            if (e.result) {
+                        finalData && finalData.map((e) => {
+                            if (e.result === 1) {
+                                { counts++ }
                                 return <div key={e.id} className='box'>
-                                    <span className='arrow'>{index + 1}
-                                        {listOfDown.includes(e.id) ? <FaArrowDown className='arrows arrow-down' /> : ''}
-
-                                        {listOfUp.includes(e.id) ? <FaArrowUp className='arrows arrow-up' /> : ''}
-                                    </span>
+                                    <span className='arrow'>{counts}</span>
                                     <img src={e.flag} alt="" />
                                     <div>
-                                        <span>{e.countryName}</span>
+                                        <span>{e.countryName} - </span>
+                                        <span>{e.singerName}</span>
                                         <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
                                     </div>
-                                    <span>{`${(((total / e.puan1)) / finalData.length).toFixed(0) >= 1 ? (((total / e.puan1)) / finalData.length).toFixed(0) : '<1'}%`}</span>
+                                    <span>{`${(((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) >= 1 ? (((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) : '<1'}%`}</span>
                                     <span>{e.puan1}</span>
+                                    <span>{e.puan2}</span>
                                     <span>{e.puan1 + 0.5}</span>
-                                    <span>{((e.puan1 / 2).toFixed(1)).endsWith(0) ? (e.puan1 / 2).toFixed() : (e.puan1 / 2).toFixed(1)}</span>
-                                    <span>{((e.puan1 / 2).toFixed(1)).endsWith(0) ? (e.puan1 / 2).toFixed() : (e.puan1 / 2).toFixed(1)}</span>
+                                    <span>{((e.puan1 + e.puan2 / 2).toFixed(1)).endsWith(0) ? (e.puan1 + e.puan2 / 2).toFixed() : (e.puan1 + e.puan2 / 2).toFixed(1)}</span>
+                                    <span>{(((e.puan1 + e.puan2) / 2).toFixed(1)).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed() : ((e.puan1 + e.puan2) / 2).toFixed(1)}</span>
                                 </div>
                             }
                         })
@@ -142,9 +110,9 @@ const Juri = () => {
                         })
                     }
                 </div>
-            </div>
+            </div >
         </>
     )
 }
 
-export default Juri
+export default FinalSeven

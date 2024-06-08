@@ -1,34 +1,22 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Routes, Route, NavLink } from 'react-router-dom'
 import './Head.css'
+import More from '../More/More'
 
 const Head = () => {
     return (
         <div className='head'>
-            <h1>ODDS</h1>
-            <h1>The Voice Of EuroFans</h1>
-            <h2>Edition 9</h2>
-
             <div>
+                <h1 style={{ textAlign: 'center' }}>ODDS</h1>
+                <h1 style={{ textAlign: 'center' }}>The Voice Of EuroFans</h1>
                 <ul>
-                    <li>
-                        <NavLink to={'/tvef-odds/'}>Final</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={'/tvef-odds/semi-final-1'}>Semi Final 1</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={'/tvef-odds/semi-final-2'}>Semi Final 2</NavLink>
-                    </li>
+                    <li><NavLink to={'/tvef-odds/'}>Odds</NavLink></li>
+                    <li><NavLink to={'/tvef-odds/result'}>Result</NavLink></li>
+                    <li><NavLink to={'/tvef-odds/more'}>More</NavLink></li>
                 </ul>
-                <ul>
-                    <li>
-                        <NavLink to={'/tvef-odds/juri'}>Juri</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to={'/tvef-odds/tele'}>Tele</NavLink>
-                    </li>
-                </ul>
+                <Routes>
+                    <Route path='/tvef-odds/more' element={<More />} />
+                </Routes>
             </div>
         </div>
     )

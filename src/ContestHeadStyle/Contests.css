@@ -1,24 +1,16 @@
-.head {
+.head-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 10px;
 }
 
-.main-section>.head>h1,
-h2 {
+.head-box>h2 {
+    text-align: center;
     padding: 0;
     margin: 0;
 }
 
-.head>div {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-.head>div>ul {
+.head-box>ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -26,13 +18,13 @@ h2 {
     padding: 10px 0;
 }
 
-.head>div>ul>li>a {
+.head-box>ul>li>a {
     padding: 3px 6px;
     border: 1px solid red;
     border-radius: 3px;
 }
 
-.head>div>ul>li>a:hover {
+.head-box>ul>li>a:hover {
     background-color: red;
     color: white;
 }

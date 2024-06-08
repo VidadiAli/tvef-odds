@@ -4,10 +4,13 @@ import { mainUrl } from '../Data/Data'
 import { FaArrowUp } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import Contest9 from './Contest9'
 
 const Final = () => {
     const [finalData, setFinalData] = useState([]);
     const [pointsData, setPointsData] = useState([]);
+
+    let counts = 0;
 
     const callData = async () => {
         const data = (await axios.get(`${mainUrl}final`)).data;
@@ -84,44 +87,69 @@ const Final = () => {
     finalData && finalData.forEach((e) => {
         indexArrayForLocal.push(e.id);
         localStorage.setItem('indexArrayOfFinal', indexArrayForLocal);
+        console.log(`${e.youtubeLink.slice(0, 24)}embed/${e.youtubeLink.slice(e.youtubeLink.length - 11, e.youtubeLink.length)}`)
     });
 
 
 
 
     return (
-        <div className='final'>
-            <h2>Who will be winner of TVEF Edition 9?</h2>
-            <dir>
-                <span>Bookmakers have predicted</span>
-                <h2> {leader}</h2>
-            </dir>
-            {
-                finalData && finalData.map((e, index) => {
-                    if (e.result) {
-                        return <div key={e.id} className='box'>
-                            <span className='arrow'>{index + 1}
-                                {listOfDown.includes(e.id) ? <FaArrowDown className='arrows arrow-down' /> : ''}
+        <>
+            <Contest9 />
+            <div className='contest-participants'>
+                <div className='final'>
+                    <h2>Who will be winner of TVEF Edition 9?</h2>
+                    <dir>
+                        <span>Bookmakers have predicted</span>
+                        <h2> {leader}</h2>
+                    </dir>
+                    {
+                        finalData && finalData.map((e) => {
+                            if (e.result) {
+                                { counts++ }
+                                return <div key={e.id} className='box'>
+                                    <span className='arrow'>{counts}
+                                        {listOfDown.includes(e.id) ? <FaArrowDown className='arrows arrow-down' /> : ''}
 
-                                {listOfUp.includes(e.id) ? <FaArrowUp className='arrows arrow-up' /> : ''}
-                            </span>
-                            <img src={e.flag} alt="" />
-                            <div>
-                                <span>{e.countryName} - </span>
-                                <span> {e.singerName}</span>
-                                <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
-                            </div>
-                            <span>{`${(((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) >= 1 ? (((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) : '<1'}%`}</span>
-                            <span>{e.puan1}</span>
-                            <span>{e.puan2}</span>
-                            <span>{e.puan1 + 0.5}</span>
-                            <span>{((e.puan1 + e.puan2 / 2).toFixed(1)).endsWith(0) ? (e.puan1 + e.puan2 / 2).toFixed() : (e.puan1 + e.puan2 / 2).toFixed(1)}</span>
-                            <span>{(((e.puan1 + e.puan2) / 2).toFixed(1)).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed() : ((e.puan1 + e.puan2) / 2).toFixed(1)}</span>
-                        </div>
+                                        {listOfUp.includes(e.id) ? <FaArrowUp className='arrows arrow-up' /> : ''}
+                                    </span>
+                                    <img src={e.flag} alt="" />
+                                    <div>
+                                        <span>{e.countryName}</span>
+                                        <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
+                                    </div>
+                                    <span>{`${(((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) >= 1 ? (((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) : '<1'}%`}</span>
+                                    <span>{e.puan1}</span>
+                                    <span>{e.puan2}</span>
+                                    <span>{e.puan1 + 0.5}</span>
+                                    <span>{((e.puan1 + e.puan2 / 2).toFixed(1)).endsWith(0) ? (e.puan1 + e.puan2 / 2).toFixed() : (e.puan1 + e.puan2 / 2).toFixed(1)}</span>
+                                    <span>{(((e.puan1 + e.puan2) / 2).toFixed(1)).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed() : ((e.puan1 + e.puan2) / 2).toFixed(1)}</span>
+                                </div>
+                            }
+                        })
                     }
-                })
-            }
-        </div>
+                </div>
+                <div className='participants'>
+                    {
+                        finalData && finalData.map((e) => {
+                            if (e.result && e.youtubeLink != "") {
+                                return <div key={e.id} className='part-box'>
+                                    <span>{e.countryName}</span>
+                                    <div className='text-box'>
+                                        <span>{e.singerName}</span>
+                                    </div>
+                                    <div className='iframe-box'>
+                                        <div>
+                                            <iframe src={`${e.youtubeLink.slice(0, 24)}embed/${e.youtubeLink.slice(e.youtubeLink.length - 11, e.youtubeLink.length)}`} ></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        })
+                    }
+                </div>
+            </div >
+        </>
     )
 }
 

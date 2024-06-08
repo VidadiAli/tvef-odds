@@ -1,22 +1,29 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import Final from './Final'
-import SF1 from './SF1'
-import SF2 from './SF2'
-import Tele from './Tele'
-import Juri from './Juri'
+import { NavLink } from 'react-router-dom'
+import '../ContestHeadStyle/Contests.css'
 
 const Contest9 = () => {
     return (
-        <>
-            <Routes >
-                <Route path='/tvef-odds/' element={<Final />} />
-                <Route path='/tvef-odds/semi-final-1' element={<SF1 />} />
-                <Route path='/tvef-odds/semi-final-2' element={<SF2 />} />
-                <Route path='/tvef-odds/tele' element={<Tele />} />
-                <Route path='/tvef-odds/juri' element={<Juri />} />
-            </Routes>
-        </>
+        <div className='head-box'>
+            <h2>Edition 9</h2>
+            <ul>
+                <li>
+                    <NavLink to={'/tvef-odds/'}>Final</NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/tvef-odds/semi-final-1'}>Semi Final 1</NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/tvef-odds/semi-final-2'}>Semi Final 2</NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/tvef-odds/juri'}>Jury</NavLink>
+                </li>
+                <li>
+                    <NavLink to={'/tvef-odds/tele'}>Tele</NavLink>
+                </li>
+            </ul>
+        </div>
     )
 }
 
