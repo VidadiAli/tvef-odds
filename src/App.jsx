@@ -1,6 +1,9 @@
 import './App.css'
 import Head from './Head/Head'
 import { Route, Routes } from 'react-router-dom'
+
+import Result from './Result/Result'
+
 import Final from './Contest9/Final'
 import SF1 from './Contest9/SF1'
 import SF2 from './Contest9/SF2'
@@ -15,6 +18,7 @@ import SF2Seven from './Contest7/SF2Seven'
 
 
 
+
 function App() {
 
   return (
@@ -23,6 +27,8 @@ function App() {
       <Head />
 
       <Routes >
+        <Route path='/tvef-odds/result' element={<Result />} />
+
         <Route path='/tvef-odds/' element={<Final />} />
         <Route path='/tvef-odds/semi-final-1' element={<SF1 />} />
         <Route path='/tvef-odds/semi-final-2' element={<SF2 />} />
