@@ -15,6 +15,9 @@ import Contest8 from './Contest8/Contest8'
 import FinalSeven from './Contest7/FinalSeven'
 import SF1Seven from './Contest7/SF1Seven'
 import SF2Seven from './Contest7/SF2Seven'
+import FinalEight from './Contest8/FinalEight'
+import SF1Eight from './Contest8/SF1Eight'
+import SF2Eight from './Contest8/SF2Eight'
 
 
 
@@ -40,7 +43,9 @@ function App() {
         <Route path='/tvef-odds/edition-7-sf-2' element={<SF2Seven />} />
 
 
-        <Route path='/tvef-odds/contest8' element={<Contest8 />} />
+        <Route path='/tvef-odds/edition-8-final' element={<FinalEight />} />
+        <Route path='/tvef-odds/edition-8-sf-1' element={<SF1Eight />} />
+        <Route path='/tvef-odds/edition-8-sf-2' element={<SF2Eight />} />
       </Routes>
 
     </section>
