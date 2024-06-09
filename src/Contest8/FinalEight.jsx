@@ -99,7 +99,7 @@ const FinalEight = () => {
                                     if (e.result === 0) {
                                         return <div key={e.id}>
                                             <img src={e.flag} alt={`flag of ${e.countryName}`} />
-                                            <span>{e.countryName} - </span>
+                                            {innerWidth > 500 ? <span>{e.countryName} - </span> : <span>{e.countryName}</span>}
                                             <span>{e.singerName}</span>
                                         </div>
                                     }

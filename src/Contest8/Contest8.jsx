@@ -5,7 +5,7 @@ import '../ContestHeadStyle/Contests.css'
 const Contest8 = () => {
     return (
         <div className='head-box'>
-            <h2>Edition 9</h2>
+            <h2>Edition 8</h2>
             <ul>
                 <li>
                     <NavLink to={'/tvef-odds/edition-8-final'}>Final</NavLink>
