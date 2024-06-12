@@ -5,6 +5,7 @@ import { FaArrowUp } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import Contest9 from './Contest9'
+import WinnerForm from '../WinnerForm/WinnerForm';
 
 const Final = () => {
     const [finalData, setFinalData] = useState([]);
@@ -98,6 +99,7 @@ const Final = () => {
             <Contest9 />
             <div className='contest-participants'>
                 <div className='final'>
+                    {/* <a href="#goChoose" style={{ margin: '10px auto', padding: '10px 15px', border: '1px solid red' }}>Choose Winner</a> */}
                     <h2>Who will be winner of TVEF Edition 9?</h2>
                     <dir>
                         <span>Bookmakers have predicted</span>
@@ -148,6 +150,8 @@ const Final = () => {
                         })
                     }
                 </div>
+
+                {/* <WinnerForm /> */}
             </div >
         </>
     )
