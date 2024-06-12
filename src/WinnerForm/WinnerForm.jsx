@@ -3,66 +3,72 @@ import axios from 'axios';
 import { formUrl, mainUrl } from '../Data/Data';
 
 const WinnerForm = () => {
-    const [arrayOfForm, setArrayOfForm] = useState([]);
-    const [puanData, setPuanData] = useState([]);
-    const [puans, setPuans] = useState([]);
-    const [lastArray, setLastArray] = useState([]);
-    const [createClass, setCreateClass] = useState('');
-    const [formPuansClass, setFormPuansClass] = useState('');
 
-    let counts = 0;
+    const [mainArray, setMainArray] = useState([]);
+    const [puans, setPuans] = useState([]);
+    const [btnClass, setBtnClass] = useState('');
+    const [waitClass, setWaitClass] = useState('');
+    const [puansClass, setPuansClass] = useState('')
+    const [showenPuans, setShowenPuans] = useState([])
+    const [showenUnderLine, setShowenUnderLine] = useState([])
+
+    let count = 0;
+
 
     const callData = async () => {
-        const data = (await axios.get(`${mainUrl}final`)).data;
-        setArrayOfForm(data);
-        const arrayOfPuans = (await axios.get(`${formUrl}readFormPuan`)).data;
-        setPuanData(arrayOfPuans);
+        const data = (await axios.get(`${mainUrl}final`)).data
+        setMainArray(data);
+    }
 
-        if (JSON.parse(localStorage.getItem('lastArray'))) {
-            callForm()
+    useEffect(() => {
+        callData()
+    }, [])
+
+    const createPuan = async (countryName) => {
+
+        if (!localStorage.getItem('formVote')) {
+            setWaitClass('wait-vote-adding')
+            const element = {
+                "id": countryName + Math.floor(Math.random() * 99999999),
+                "countryName": countryName,
+                "countryPuan": 1,
+            }
+
+            await axios.post(`${formUrl}createFormPuan`, element);
+
+            setWaitClass('')
+            setBtnClass('create-vote-adding');
         }
         else {
-            setLastArray(data)
-        }
-    }
+            alert('You have voted')
+            const voteSystem = async () => {
+                const formData = (await axios.get(`${formUrl}readFormPuan`)).data;
+                const data = [];
 
-    const addData = async (element) => {
-        await axios.post(`${formUrl}createFormPuan`, element);
-        setCreateClass('create-vote-adding');
-        sumPuans()
-    }
+                mainArray.forEach((f) => {
+                    let sumOfPuan = 0;
+                    formData && formData.forEach((e) => {
+                        if (f.result) {
+                            if (f.countryName === e.countryName) {
+                                sumOfPuan += e.countryPuan;
+                            }
+                        }
+                    });
 
-    const sendPuan = (f) => {
-        if (!JSON.parse(localStorage.getItem('lastArray'))) {
-            const element = {
-                id: f + Math.floor(Math.random() * 99999999),
-                countryName: f,
-                countryPuan: 3
+                    puans.push(sumOfPuan);
+                    setPuans(puans);
+                    data.push(f);
+                })
+
+                callSort(data, puans);
             }
-            addData(element)
+
+            voteSystem();
         }
     }
 
-
-    const sumPuans = () => {
-        arrayOfForm && arrayOfForm.forEach((e) => {
-            let count = 0;
-            puanData && puanData.forEach((f) => {
-                if (e.countryName === f.countryName) {
-                    count += Number(f.countryPuan);
-                }
-            })
-            puans.push(count);
-            setPuans(puans);
-        })
-
-
-        callScore()
-        localStorage.setItem('puansOfForm', JSON.stringify(puans));
-    }
-
-    const callScore = () => {
-        let amount = 0, mainIndex = 0, n = puans.length;
+    const callSort = (data, puans) => {
+        let amount = 0, mainIndex = 0, n = puans.length, leader;
         for (let j = 0; j < puans.length; j++) {
             for (let i = 0; i < n; i++) {
                 if (puans[i] > amount) {
@@ -75,96 +81,100 @@ const WinnerForm = () => {
             puans[n - 1] = puans[mainIndex]
             puans[mainIndex] = changeElement1;
 
-            let changeElement2 = arrayOfForm[n - 1]
-            arrayOfForm[n - 1] = arrayOfForm[mainIndex]
-            arrayOfForm[mainIndex] = changeElement2;
+            let changeElement2 = data[n - 1]
+            data[n - 1] = data[mainIndex]
+            data[mainIndex] = changeElement2;
 
             n--;
             mainIndex = 0
             amount = 0
-
         };
 
-        puans.reverse()
-        arrayOfForm.reverse()
 
-        localStorage.setItem('lastArray', JSON.stringify(arrayOfForm));
+        data.reverse();
+        puans.reverse();
+
+        dateOfMainArray(data, puans)
     }
 
-    const create = () => {
-        if (!JSON.parse(localStorage.getItem('lastArray'))) {
-            setLastArray([])
-        }
-        else {
-            callForm()
-        }
-    }
+    const vote = async () => {
+        const formData = (await axios.get(`${formUrl}readFormPuan`)).data;
+        const data = [];
 
+        mainArray.forEach((f) => {
+            let sumOfPuan = 0;
+            formData && formData.forEach((e) => {
+                if (f.result) {
+                    if (f.countryName === e.countryName) {
+                        sumOfPuan += e.countryPuan;
+                    }
+                }
+            });
 
-    const callForm = async () => {
-        //const data = (await axios.get(`${mainUrl}final`)).data;
-        // setArrayOfForm(data);
-        // const arrayOfPuans = (await axios.get(`${formUrl}readFormPuan`)).data;
-        // setPuanData(arrayOfPuans);
-
-        // arrayOfForm && arrayOfForm.forEach((e) => {
-        //     let count = 0;
-        //     puanData && puanData.forEach((f) => {
-        //         if (e.countryName === f.countryName) {
-        //             count += Number(f.countryPuan);
-        //         }
-        //     })
-        //     puans.push(count);
-        //     setPuans(puans);
-        // })
-
-
-        // callScore();
-        // localStorage.setItem('puansOfForm', JSON.stringify(puans));
-
-        setLastArray(JSON.parse(localStorage.getItem('lastArray')))
-        let newPuansArray = (JSON.parse(localStorage.getItem('puansOfForm')))
-        let sumOfPuans = 0;
-
-        newPuansArray.forEach((e) => {
-            sumOfPuans += e;
+            puans.push(sumOfPuan);
+            setPuans(puans);
+            data.push(f);
         })
 
-        for (let i = 0; i < newPuansArray.length; i++) {
-            document.getElementsByClassName('form-puans')[i].textContent = ((newPuansArray[i] / sumOfPuans) * 100).toFixed(0) + '%';
-            document.getElementsByClassName('under-line')[i].style.width = ((newPuansArray[i] / sumOfPuans) * 100).toFixed(0) + '%';
-        }
-        console.log(newPuansArray)
-
-        setCreateClass('');
-        setFormPuansClass('form-puans-adding')
+        callSort(data, puans);
     }
 
-    useEffect(() => {
-        callData();
-    });
+    const dateOfMainArray = (data, puans) => {
+        setMainArray(data);
+        setPuans(puans);
+
+        setBtnClass('');
+        setPuansClass('form-puans-adding');
+        let sumOfAllPuans = 0;
+        puans.forEach((e) => {
+            sumOfAllPuans += e;
+        });
+
+        let forPercentage = []
+        for (let i = 0; i < data.length; i++) {
+            forPercentage.push(((puans[i] / sumOfAllPuans) * 100).toFixed(0));
+        }
+        forPercentage.sort((a, b) => a - b);
+        forPercentage.reverse()
+        console.log(forPercentage)
+
+        for (let i = 0; i < data.length; i++) {
+            showenPuans.push(((puans[i] / sumOfAllPuans) * 100).toFixed(0) + '%')
+            setShowenPuans(showenPuans);
+            showenUnderLine.push(`calc(${((((puans[i] / sumOfAllPuans) * 100) / forPercentage[0]) * 100).toFixed(0) + '%'} - 20px)`)
+            setShowenUnderLine(showenUnderLine);
+        }
+
+        localStorage.setItem('formVote', 'formVote')
+    }
+
 
     return (
         <div className="winner-form" id='goChoose'>
-            <div className={`create-vote ${createClass}`}>
-                <button onClick={create}>Vote</button>
+            <div className={`create-vote ${btnClass}`}>
+                <button onClick={vote}>vote</button>
+            </div>
+
+            <div className={`create-vote ${waitClass}`}>
+                <button >please wait ...</button>
             </div>
             <div className='list-order'>
-                <h1>Choose your Winner</h1>
+                <h1>Choose Your Winner</h1>
                 {
-
-                    lastArray && lastArray.map((e) => {
-                        { counts++ }
-                        return <div key={e.id}>
-                            <span>{counts}. </span>
-                            <span onClick={(f) => sendPuan(f.target.textContent)} className='country-name'>{e.countryName}</span>
-                            <span className={`form-puans ${formPuansClass}`}>{0}%</span>
-                            <span className='under-line'></span>
-                        </div>
+                    mainArray && mainArray.map((e) => {
+                        { count++ }
+                        if (e.result) {
+                            return <div key={e.id}>
+                                <span>{count}</span>
+                                <span className='country-name' onClick={(f) => createPuan(f.target.textContent)}>{e.countryName}</span>
+                                <span className={`form-puans ${puansClass}`}>{showenPuans[count - 1]}</span>
+                                <span className='under-line' style={{ width: `${showenUnderLine[count - 1]}` }}></span>
+                            </div>
+                        }
                     })
                 }
             </div>
-        </div>
+        </div >
     )
 }
 

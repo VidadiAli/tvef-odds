@@ -100,8 +100,10 @@ const SF1 = () => {
                     </dir>
 
                     <dir className="stop-odd">
-                        <h4>Closed event</h4>
-                        <span>The odds will not be updated</span>
+                        <div>
+                            <h4>Closed event</h4>
+                            <span>The odds will not be updated</span>
+                        </div>
                     </dir>
                     {
                         finalData && finalData.map((e, index) => {

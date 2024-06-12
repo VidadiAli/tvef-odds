@@ -12,6 +12,7 @@
   padding: 10px;
   overflow: auto;
   height: min-content;
+  position: relative;
 }
 
 .main-section>.contest-participants>.final>div {
@@ -111,11 +112,17 @@
 }
 
 .main-section>.contest-participants>.final>.stop-odd {
-  margin: 20px auto;
   padding: 20px;
+  position: sticky;
+  left: 0;
+}
+
+.main-section>.contest-participants>.final>.stop-odd>div {
+  padding: 30px 20px;
   background-color: rgb(247, 233, 106);
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 10px;
   rotate: 3deg;
 }
@@ -254,6 +261,11 @@
 }
 
 .main-section>.contest-participants>.winner-form>.create-vote-adding {
+  display: flex;
+  z-index: 1000;
+}
+
+.main-section>.contest-participants>.winner-form>.wait-vote-adding {
   display: flex;
   z-index: 1000;
 }

@@ -99,7 +99,9 @@ const Final = () => {
             <Contest9 />
             <div className='contest-participants'>
                 <div className='final'>
-                    {/* <a href="#goChoose" style={{ margin: '10px auto', padding: '10px 15px', border: '1px solid red' }}>Choose Winner</a> */}
+                    <div style={{ margin: '20px auto', display: 'flex', justifyContent: 'center', position: 'sticky', left: '0' }}>
+                        <a href="#goChoose" style={{ padding: '10px 15px', border: '1px solid red' }}>Choose Winner</a>
+                    </div>
                     <h2>Who will be winner of TVEF Edition 9?</h2>
                     <dir>
                         <span>Bookmakers have predicted</span>
@@ -151,7 +153,7 @@ const Final = () => {
                     }
                 </div>
 
-                {/* <WinnerForm /> */}
+                <WinnerForm />
             </div >
         </>
     )
