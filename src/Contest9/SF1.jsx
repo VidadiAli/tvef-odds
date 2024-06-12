@@ -98,6 +98,11 @@ const SF1 = () => {
                         <h2>{leader1}, {leader2}, {leader3}</h2>
                         <span>and 7 others</span>
                     </dir>
+
+                    <dir className="stop-odd">
+                        <h4>Closed event</h4>
+                        <span>The odds will not be updated</span>
+                    </dir>
                     {
                         finalData && finalData.map((e, index) => {
                             if (e.result) {
