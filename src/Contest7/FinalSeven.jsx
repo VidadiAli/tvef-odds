@@ -7,12 +7,16 @@ import Contest7 from './Contest7'
 const FinalSeven = () => {
     const [finalData, setFinalData] = useState([]);
     const [pointsData, setPointsData] = useState([]);
+    const [waitClass, setWaitClass] = useState('');
 
     let counts = 0;
 
     const callData = async () => {
+        setWaitClass('wait-vote-adding');
         const data = (await axios.get(`${mainUrl7}final`)).data;
         setFinalData(data);
+
+        setWaitClass('');
 
         data.forEach((element) => {
             pointsData.push(element.puan1 + element.puan2);
@@ -62,6 +66,9 @@ const FinalSeven = () => {
         <>
             <Contest7 />
             <div className='contest-participants'>
+                <div className={`wait-vote ${waitClass}`}>
+                    <button >please wait ...</button>
+                </div>
                 <div className='final'>
                     <h2>Who will be winner of TVEF Edition 7?</h2>
                     <dir>

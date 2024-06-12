@@ -155,7 +155,7 @@ const WinnerForm = () => {
                 <button onClick={vote}>vote</button>
             </div>
 
-            <div className={`create-vote ${waitClass}`}>
+            <div className={`wait-vote ${waitClass}`}>
                 <button >please wait ...</button>
             </div>
             <div className='list-order'>

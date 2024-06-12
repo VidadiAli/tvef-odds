@@ -10,12 +10,16 @@ import WinnerForm from '../WinnerForm/WinnerForm';
 const Final = () => {
     const [finalData, setFinalData] = useState([]);
     const [pointsData, setPointsData] = useState([]);
+    const [waitClass, setWaitClass] = useState('');
 
     let counts = 0;
 
     const callData = async () => {
+        setWaitClass('wait-vote-adding')
         const data = (await axios.get(`${mainUrl}final`)).data;
         setFinalData(data);
+
+        setWaitClass('');
 
         data.forEach((element) => {
             pointsData.push(element.puan1 + element.puan2);
@@ -98,6 +102,9 @@ const Final = () => {
         <>
             <Contest9 />
             <div className='contest-participants'>
+                <div className={`wait-vote ${waitClass}`}>
+                    <button >please wait ...</button>
+                </div>
                 <div className='final'>
                     <div style={{ margin: '20px auto', display: 'flex', justifyContent: 'center', position: 'sticky', left: '0' }}>
                         <a href="#goChoose" style={{ padding: '10px 15px', border: '1px solid red' }}>Choose Winner</a>

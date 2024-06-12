@@ -7,10 +7,14 @@ import Contest8 from './Contest8';
 const SF2Eight = () => {
     const [finalData, setFinalData] = useState([]);
     const [pointsData, setPointsData] = useState([]);
+    const [waitClass, setWaitClass] = useState('');
 
     const callData = async () => {
+        setWaitClass('wait-vote-adding');
         const data = (await axios.get(`${mainUrl8}sf2`)).data;
         setFinalData(data);
+
+        setWaitClass('');
 
         data.forEach((element) => {
             pointsData.push(element.puan1 + element.puan2);
@@ -57,6 +61,9 @@ const SF2Eight = () => {
         <>
             <Contest8 />
             <div className='contest-participants'>
+                <div className={`wait-vote ${waitClass}`}>
+                    <button >please wait ...</button>
+                </div>
                 <div className='final'>
                     <h2>Who will qualify for the Final from Semi-final 2?</h2>
                     <dir>
