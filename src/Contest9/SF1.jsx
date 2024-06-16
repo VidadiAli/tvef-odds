@@ -19,8 +19,10 @@ const SF1 = () => {
         setWaitClass('');
 
         data.forEach((element) => {
-            pointsData.push(element.puan1 + element.puan2);
-            setPointsData(pointsData)
+            if (element.result != -2) {
+                pointsData.push(element.puan1 + element.puan2);
+                setPointsData(pointsData)
+            }
         });
     }
 
@@ -114,7 +116,7 @@ const SF1 = () => {
                     </dir>
                     {
                         finalData && finalData.map((e, index) => {
-                            if (e.result) {
+                            if (e.result != -2) {
                                 return <div key={e.id} className='box'>
                                     <span className='arrow'>{index + 1}
                                         {listOfDown.includes(e.id) ? <FaArrowDown className='arrows arrow-down' /> : ''}
