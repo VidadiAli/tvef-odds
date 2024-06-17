@@ -1,7 +1,7 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { mainUrl, resultUrl9 } from '../Data/Data';
-import './Result.css'
+// import axios from 'axios';
+// import React, { useEffect, useState } from 'react'
+// import { mainUrl, resultUrl9 } from '../Data/Data';
+// import './Result.css'
 
 const Result = () => {
     // const [mainArray, setMainArray] = useState([]);
@@ -104,6 +104,8 @@ const Result = () => {
 
 
     return (
+
+        <div>üzərində işlənir ...</div>
         // <div className='result'>
         //     <div className='show-all-puans'>
         //         <div className='score' onClick={(e) => changeElement(e.target)}>
@@ -202,6 +204,7 @@ const Result = () => {
         //     </div>
 
         //     <div className='show-result'>
+
         //         {
         //             countryName.map((j, index) => {
         //                 return secondArray.map((e) => {
@@ -219,10 +222,6 @@ const Result = () => {
         //         }
         //     </div>
         // </div >
-
-        <div>
-            üzərində işlənir...
-        </div>
     );
 };
 
