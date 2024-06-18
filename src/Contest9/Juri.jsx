@@ -11,12 +11,14 @@ const Juri = () => {
     const [pointsData, setPointsData] = useState([]);
 
     const callData = async () => {
-        const data = (await axios.get(`${mainUrl}final`)).data;
+        const data = (await axios.get(`${mainUrl}juri`)).data;
         setFinalData(data);
 
         data.forEach((element) => {
-            pointsData.push(element.puan1);
+
+            pointsData.push(element.puan1 + element.puan2);
             setPointsData(pointsData)
+
         });
     }
 
@@ -87,7 +89,7 @@ const Juri = () => {
     });
 
 
-
+    let counts = 0;
 
     return (
         <>
@@ -100,10 +102,11 @@ const Juri = () => {
                         <h2> {leader}</h2>
                     </dir>
                     {
-                        finalData && finalData.map((e, index) => {
+                        finalData && finalData.map((e) => {
                             if (e.result) {
+                                { counts++ }
                                 return <div key={e.id} className='box'>
-                                    <span className='arrow'>{index + 1}
+                                    <span className='arrow'>{counts}
                                         {listOfDown.includes(e.id) ? <FaArrowDown className='arrows arrow-down' /> : ''}
 
                                         {listOfUp.includes(e.id) ? <FaArrowUp className='arrows arrow-up' /> : ''}
@@ -113,7 +116,7 @@ const Juri = () => {
                                         <span>{e.countryName}</span>
                                         <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
                                     </div>
-                                    <span>{`${(((total / e.puan1)) / finalData.length).toFixed(0) >= 1 ? (((total / e.puan1)) / finalData.length).toFixed(0) : '<1'}%`}</span>
+                                    <span>{`${(((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) >= 1 ? (((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) : '<1'}%`}</span>
                                     <span>{e.puan1}</span>
                                     <span>{e.puan1 + 0.5}</span>
                                     <span>{((e.puan1 / 2).toFixed(1)).endsWith(0) ? (e.puan1 / 2).toFixed() : (e.puan1 / 2).toFixed(1)}</span>
@@ -122,6 +125,22 @@ const Juri = () => {
                             }
                         })
                     }
+                    <dir className="nq">
+                        <h1>Not Qualify</h1>
+                        <div>
+                            {
+                                finalData && finalData.map((e) => {
+                                    if (!e.result) {
+                                        return <div key={e.id}>
+                                            <img src={e.flag} alt={`flag of ${e.countryName}`} />
+                                            {innerWidth > 500 ? <span>{e.countryName} - </span> : <span>{e.countryName}</span>}
+                                            <span>{e.singerName}</span>
+                                        </div>
+                                    }
+                                })
+                            }
+                        </div>
+                    </dir>
                 </div>
                 <div className='participants'>
                     {
