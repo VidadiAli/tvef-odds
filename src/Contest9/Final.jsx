@@ -16,12 +16,12 @@ const Final = () => {
 
     const callData = async () => {
         setWaitClass('wait-vote-adding')
-        const data = (await axios.get(`${mainUrl}final`)).data;
-        setFinalData(data);
+        const data = (await axios.get(`${mainUrl}edition9`)).data;
+        setFinalData(data.final);
 
         setWaitClass('');
 
-        data.forEach((element) => {
+        data.final.forEach((element) => {
             pointsData.push(element.puan1 + element.puan2);
             setPointsData(pointsData)
         });
@@ -73,8 +73,6 @@ const Final = () => {
     if (!localStorage.getItem('indexArrayOfFinal')) indexArray = [];
     else {
         const localArrayFinal = localStorage.getItem('indexArrayOfFinal').split(',')
-        console.log(indexArray)
-        console.log(localArrayFinal)
         indexArray && indexArray.forEach((e) => {
             if (indexArray.indexOf(e) < localArrayFinal.indexOf(e)) {
                 listOfUp.push(e);
@@ -92,10 +90,7 @@ const Final = () => {
     finalData && finalData.forEach((e) => {
         indexArrayForLocal.push(e.id);
         localStorage.setItem('indexArrayOfFinal', indexArrayForLocal);
-        console.log(`${e.youtubeLink.slice(0, 24)}embed/${e.youtubeLink.slice(e.youtubeLink.length - 11, e.youtubeLink.length)}`)
     });
-
-
 
 
     return (

@@ -62,12 +62,30 @@ const FinalSeven = () => {
     });
 
 
+    // let mainTime;
+    // useEffect(() => {
+    //     let time1Ed7Final = 1, time2Ed7Final = 59;
+    //     mainTime = setInterval(() => {
+    //         document.getElementsByClassName('time')[0].textContent = `${time1Ed7Final}:${time2Ed7Final}`;
+    //         time2Ed7Final -= 1;
+    //         if (time2Ed7Final === 0) {
+    //             time1Ed7Final -= 1;
+    //             time2Ed7Final = 59;
+    //         }
+    //     }, 1000)
+
+    //     return () => clearInterval(mainTime)
+    // })
+
+
+
     return (
         <>
             <Contest7 />
             <div className='contest-participants'>
                 <div className={`wait-vote ${waitClass}`}>
                     <button >please wait ...</button>
+                    <button className='time'>Less than 2 minutes</button>
                 </div>
                 <div className='final'>
                     <h2>Who will be winner of TVEF Edition 7?</h2>

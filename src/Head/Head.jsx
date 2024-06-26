@@ -11,7 +11,7 @@ const Head = () => {
                 <h1 style={{ textAlign: 'center' }}>The Voice Of EuroFans</h1>
                 <ul>
                     <li><NavLink to={'/tvef-odds/'}>Odds</NavLink></li>
-                    <li><NavLink to={'/tvef-odds/result'}>Result</NavLink></li>
+                    <li><NavLink to={'/tvef-odds/ed-9-result-final'}>Result</NavLink></li>
                     <li><NavLink to={'/tvef-odds/more'}>More</NavLink></li>
                 </ul>
                 <Routes>

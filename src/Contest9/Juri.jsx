@@ -11,10 +11,10 @@ const Juri = () => {
     const [pointsData, setPointsData] = useState([]);
 
     const callData = async () => {
-        const data = (await axios.get(`${mainUrl}juri`)).data;
-        setFinalData(data);
+        const data = (await axios.get(`${mainUrl}edition9`)).data;
+        setFinalData(data.juri);
 
-        data.forEach((element) => {
+        data.juri.forEach((element) => {
 
             pointsData.push(element.puan1 + element.puan2);
             setPointsData(pointsData)

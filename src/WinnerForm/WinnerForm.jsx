@@ -16,8 +16,8 @@ const WinnerForm = () => {
 
 
     const callData = async () => {
-        const data = (await axios.get(`${mainUrl}final`)).data
-        setMainArray(data);
+        const data = (await axios.get(`${mainUrl}edition9`)).data
+        setMainArray(data.final);
     }
 
     useEffect(() => {
@@ -48,10 +48,8 @@ const WinnerForm = () => {
                 mainArray.forEach((f) => {
                     let sumOfPuan = 0;
                     formData && formData.forEach((e) => {
-                        if (f.result) {
-                            if (f.countryName === e.countryName) {
-                                sumOfPuan += e.countryPuan;
-                            }
+                        if (f.countryName === e.countryName) {
+                            sumOfPuan += e.countryPuan;
                         }
                     });
 
@@ -104,10 +102,8 @@ const WinnerForm = () => {
         mainArray.forEach((f) => {
             let sumOfPuan = 0;
             formData && formData.forEach((e) => {
-                if (f.result) {
-                    if (f.countryName === e.countryName) {
-                        sumOfPuan += e.countryPuan;
-                    }
+                if (f.countryName === e.countryName) {
+                    sumOfPuan += e.countryPuan;
                 }
             });
 
@@ -163,14 +159,12 @@ const WinnerForm = () => {
                 {
                     mainArray && mainArray.map((e) => {
                         { count++ }
-                        if (e.result) {
-                            return <div key={e.id}>
-                                <span>{count}</span>
-                                <span className='country-name' onClick={(f) => createPuan(f.target.textContent)}>{e.countryName}</span>
-                                <span className={`form-puans ${puansClass}`}>{showenPuans[count - 1]}</span>
-                                <span className='under-line' style={{ width: `${showenUnderLine[count - 1]}` }}></span>
-                            </div>
-                        }
+                        return <div key={e.id}>
+                            <span>{count}</span>
+                            <span className='country-name' onClick={(f) => createPuan(f.target.textContent)}>{e.countryName}</span>
+                            <span className={`form-puans ${puansClass}`}>{showenPuans[count - 1]}</span>
+                            <span className='under-line' style={{ width: `${showenUnderLine[count - 1]}` }}></span>
+                        </div>
                     })
                 }
             </div>

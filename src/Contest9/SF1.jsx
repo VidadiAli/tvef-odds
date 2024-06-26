@@ -13,12 +13,12 @@ const SF1 = () => {
 
     const callData = async () => {
         setWaitClass('wait-vote-adding')
-        const data = (await axios.get(`${mainUrl}sf1`)).data;
-        setFinalData(data);
+        const data = (await axios.get(`${mainUrl}edition9`)).data;
+        setFinalData(data.sf1);
 
         setWaitClass('');
 
-        data.forEach((element) => {
+        data.sf1.forEach((element) => {
             if (element.result != -2) {
                 pointsData.push(element.puan1 + element.puan2);
                 setPointsData(pointsData)

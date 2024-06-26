@@ -2,7 +2,7 @@ import './App.css'
 import Head from './Head/Head'
 import { Route, Routes } from 'react-router-dom'
 
-import Result from './Result/Result'
+import ResultFinal from './Result/ResultFinal'
 
 import Final from './Contest9/Final'
 import SF1 from './Contest9/SF1'
@@ -20,6 +20,10 @@ import SF1Eight from './Contest8/SF1Eight'
 import SF2Eight from './Contest8/SF2Eight'
 
 
+import ResultSf1 from './Result/ResultSf1'
+import ResultSf2 from './Result/ResultSf2'
+
+
 
 
 function App() {
@@ -30,7 +34,7 @@ function App() {
       <Head />
 
       <Routes >
-        <Route path='/tvef-odds/result' element={<Result />} />
+        <Route path='/tvef-odds/ed-9-result-final' element={<ResultFinal />} />
 
         <Route path='/tvef-odds/' element={<Final />} />
         <Route path='/tvef-odds/semi-final-1' element={<SF1 />} />
@@ -46,6 +50,12 @@ function App() {
         <Route path='/tvef-odds/edition-8-final' element={<FinalEight />} />
         <Route path='/tvef-odds/edition-8-sf-1' element={<SF1Eight />} />
         <Route path='/tvef-odds/edition-8-sf-2' element={<SF2Eight />} />
+
+
+        <Route path='/tvef-odds/ed-9-result-sf1' element={<ResultSf1 />} />
+
+        <Route path='/tvef-odds/ed-9-result-sf2' element={<ResultSf2 />} />
+
       </Routes>
 
     </section>

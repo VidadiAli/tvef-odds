@@ -11,10 +11,10 @@ const Tele = () => {
     const [pointsData, setPointsData] = useState([]);
 
     const callData = async () => {
-        const data = (await axios.get(`${mainUrl}tele`)).data;
-        setFinalData(data);
+        const data = (await axios.get(`${mainUrl}edition9`)).data;
+        setFinalData(data.tele);
 
-        data.forEach((element) => {
+        data.tele.forEach((element) => {
             pointsData.push(element.puan2);
             setPointsData(pointsData)
         });
