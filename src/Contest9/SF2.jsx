@@ -135,6 +135,22 @@ const SF2 = () => {
                             }
                         })
                     }
+                    <dir className="nq">
+                        <h1>Finalist from Semi-Final 2</h1>
+                        <div>
+                            {
+                                finalData && finalData.map((e) => {
+                                    if (e.result && e.result != -2) {
+                                        return <div key={e.id}>
+                                            <img src={e.flag} alt={`flag of ${e.countryName}`} />
+                                            {innerWidth > 500 ? <span>{e.countryName} - </span> : <span>{e.countryName}</span>}
+                                            <span>{e.singerName}</span>
+                                        </div>
+                                    }
+                                })
+                            }
+                        </div>
+                    </dir>
                 </div>
                 <div className='participants'>
                     {
