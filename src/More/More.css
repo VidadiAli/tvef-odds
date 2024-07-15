@@ -1,0 +1,16 @@
+.more-element {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 30px 10px;
+    width: 100%;
+}
+
+.more-element>a {
+    display: inline-block;
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(229, 229, 229);
+    font-weight: 900;
+    color: black;
+}
