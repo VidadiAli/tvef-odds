@@ -6,6 +6,7 @@ import { FaArrowDown } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import Contest9 from './Contest9'
 import WinnerForm from '../WinnerForm/WinnerForm';
+import { mainScoreBoard } from '../JsFiles/MainJs';
 
 const Final = () => {
     const [finalData, setFinalData] = useState([]);
@@ -16,7 +17,8 @@ const Final = () => {
 
     const callData = async () => {
         setWaitClass('wait-vote-adding')
-        const data = (await axios.get(`${mainUrl}edition9`)).data;
+        //const data = (await axios.get(`${mainUrl}edition9`)).data;
+        const data = mainScoreBoard;
         setFinalData(data.final);
 
         setWaitClass('');

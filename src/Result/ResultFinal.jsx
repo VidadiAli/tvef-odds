@@ -4,6 +4,7 @@ import { mainUrl } from '../Data/Data';
 import './Result.css';
 import Result from './Result';
 import { LuMoveDown } from "react-icons/lu";
+import { mainScoreBoard, mainScoreBoardJury, mainScoreBoardTele } from '../JsFiles/MainJs';
 
 const ResultFinal = () => {
     const [mainArray, setMainArray] = useState([]);
@@ -22,15 +23,18 @@ const ResultFinal = () => {
     const callData = async () => {
         setWaitClass('wait-vote-adding');
 
-        const data = (await axios.get(`https://us-central1-api-tvef-vote.cloudfunctions.net/app/readPuans`)).data;
+        //const data = (await axios.get(`https://us-central1-api-tvef-vote.cloudfunctions.net/app/readPuans`)).data;
+        const data = mainScoreBoardJury;
         setMainArray(data);
 
-        const data1 = (await axios.get(`https://us-central1-api-tvef-vote.cloudfunctions.net/app/readTelePuans`)).data;
+        //const data1 = (await axios.get(`https://us-central1-api-tvef-vote.cloudfunctions.net/app/readTelePuans`)).data;
+        const data1 = mainScoreBoardTele;
         setMainArrayTele(data1);
 
         const updatedCountryNames = Array.from(new Set(data.map((element) => element.givinCountry)));
 
-        const finalData = (await axios.get(`${mainUrl}edition9`)).data;
+        //const finalData = (await axios.get(`${mainUrl}edition9`)).data;
+        const finalData = mainScoreBoard;
         setSecondArray(finalData.final);
 
         const updatedfinalCountry = Array.from(new Set(finalData.final.map((element) => element.countryName)));

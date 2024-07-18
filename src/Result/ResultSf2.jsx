@@ -4,6 +4,7 @@ import { mainUrl } from '../Data/Data';
 import './Result.css';
 import Result from './Result';
 import { LuMoveDown } from "react-icons/lu";
+import { mainScoreBoard, resultOfSf } from '../JsFiles/MainJs';
 
 const ResultSf2 = () => {
     const [mainArray, setMainArray] = useState([]);
@@ -19,17 +20,19 @@ const ResultSf2 = () => {
     const callData = async () => {
         setWaitClass('wait-vote-adding');
 
-        const data = (await axios.get(`${mainUrl}resultEd9`)).data;
+        //const data = (await axios.get(`${mainUrl}resultEd9`)).data;
+        const data = resultOfSf;
         setMainArray(data.sf2);
 
         const updatedCountryNames = Array.from(new Set(data.sf2.map((element) => element.givinCountry)));
 
-        const sf2Data = (await axios.get(`${mainUrl}edition9`)).data;
+        //const sf2Data = (await axios.get(`${mainUrl}edition9`)).data;
+        const sf2Data = mainScoreBoard;
         setSecondArray(sf2Data.sf2);
 
-        const updatedsf2Country = Array.from(new Set(sf2Data.sf2.map((element) => element.countryName)));
+        const updatedSf2Country = Array.from(new Set(sf2Data.sf2.map((element) => element.countryName)));
 
-        setsf2Country(updatedsf2Country);
+        setsf2Country(updatedSf2Country);
         setCountryName(updatedCountryNames);
 
         createPoints(data.sf2, updatedCountryNames);

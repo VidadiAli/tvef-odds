@@ -5,13 +5,15 @@ import { FaArrowUp } from "react-icons/fa";
 import { FaArrowDown } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import Contest9 from './Contest9';
+import { mainScoreBoard } from '../JsFiles/MainJs';
 
 const Juri = () => {
     const [finalData, setFinalData] = useState([]);
     const [pointsData, setPointsData] = useState([]);
 
     const callData = async () => {
-        const data = (await axios.get(`${mainUrl}edition9`)).data;
+        //const data = (await axios.get(`${mainUrl}edition9`)).data;
+        const data = mainScoreBoard;
         setFinalData(data.juri);
 
         data.juri.forEach((element) => {

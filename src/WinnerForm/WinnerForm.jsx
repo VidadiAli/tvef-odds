@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import { formUrl, mainUrl } from '../Data/Data';
+import { formPuans, mainScoreBoard } from '../JsFiles/MainJs';
 
 const WinnerForm = () => {
 
@@ -16,7 +17,8 @@ const WinnerForm = () => {
 
 
     const callData = async () => {
-        const data = (await axios.get(`${mainUrl}edition9`)).data
+        //const data = (await axios.get(`${mainUrl}edition9`)).data
+        const data = mainScoreBoard;
         setMainArray(data.final);
     }
 
@@ -26,43 +28,65 @@ const WinnerForm = () => {
 
     const createPuan = async (countryName) => {
 
-        if (!localStorage.getItem('formVote')) {
-            setWaitClass('wait-vote-adding')
-            const element = {
-                "id": countryName + Math.floor(Math.random() * 99999999),
-                "countryName": countryName,
-                "countryPuan": 1,
-            }
+        // if (!localStorage.getItem('formVote')) {
+        //     setWaitClass('wait-vote-adding')
+        //     const element = {
+        //         "id": countryName + Math.floor(Math.random() * 99999999),
+        //         "countryName": countryName,
+        //         "countryPuan": 1,
+        //     }
 
-            await axios.post(`${formUrl}createFormPuan`, element);
+        //     await axios.post(`${formUrl}createFormPuan`, element);
 
-            setWaitClass('')
-            setBtnClass('create-vote-adding');
+        //     setWaitClass('')
+        //     setBtnClass('create-vote-adding');
+        // }
+        // else {
+        //     alert('You have voted')
+        //     const voteSystem = async () => {
+        //         const formData = (await axios.get(`${formUrl}readFormPuan`)).data;
+        //         const data = [];
+
+        //         mainArray.forEach((f) => {
+        //             let sumOfPuan = 0;
+        //             formData && formData.forEach((e) => {
+        //                 if (f.countryName === e.countryName) {
+        //                     sumOfPuan += e.countryPuan;
+        //                 }
+        //             });
+
+        //             puans.push(sumOfPuan);
+        //             setPuans(puans);
+        //             data.push(f);
+        //         })
+
+        //         callSort(data, puans);
+        //     }
+
+        //     voteSystem();
+        // }
+        const voteSystem = async () => {
+            //const formData = (await axios.get(`${formUrl}readFormPuan`)).data;
+            const formData = formPuans;
+            const data = [];
+
+            mainArray.forEach((f) => {
+                let sumOfPuan = 0;
+                formData && formData.forEach((e) => {
+                    if (f.countryName === e.countryName) {
+                        sumOfPuan += e.countryPuan;
+                    }
+                });
+
+                puans.push(sumOfPuan);
+                setPuans(puans);
+                data.push(f);
+            })
+
+            callSort(data, puans);
         }
-        else {
-            alert('You have voted')
-            const voteSystem = async () => {
-                const formData = (await axios.get(`${formUrl}readFormPuan`)).data;
-                const data = [];
 
-                mainArray.forEach((f) => {
-                    let sumOfPuan = 0;
-                    formData && formData.forEach((e) => {
-                        if (f.countryName === e.countryName) {
-                            sumOfPuan += e.countryPuan;
-                        }
-                    });
-
-                    puans.push(sumOfPuan);
-                    setPuans(puans);
-                    data.push(f);
-                })
-
-                callSort(data, puans);
-            }
-
-            voteSystem();
-        }
+        voteSystem();
     }
 
     const callSort = (data, puans) => {
@@ -96,7 +120,8 @@ const WinnerForm = () => {
     }
 
     const vote = async () => {
-        const formData = (await axios.get(`${formUrl}readFormPuan`)).data;
+        //const formData = (await axios.get(`${formUrl}readFormPuan`)).data;
+        const formData = formPuans;
         const data = [];
 
         mainArray.forEach((f) => {
