@@ -33,7 +33,7 @@ function App() {
 
       <Head />
 
-      <Routes >
+      <Routes basename="/tvef-odds" >
         <Route path='/tvef-odds/ed-9-result-final' element={<ResultFinal />} />
 
         <Route path='/tvef-odds/' element={<Final />} />
