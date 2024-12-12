@@ -8,19 +8,19 @@ const Contest9 = () => {
             <h2>Edition 9</h2>
             <ul>
                 <li>
-                    <NavLink to={'/tvef-odds/'}>Final</NavLink>
+                    <NavLink to={'/tvef-odds/edition-9-final'}>Final</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/tvef-odds/semi-final-1'}>Semi Final 1</NavLink>
+                    <NavLink to={'/tvef-odds/semi-final-1-ed-9'}>Semi Final 1</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/tvef-odds/semi-final-2'}>Semi Final 2</NavLink>
+                    <NavLink to={'/tvef-odds/semi-final-2-ed-9'}>Semi Final 2</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/tvef-odds/juri'}>Jury</NavLink>
+                    <NavLink to={'/tvef-odds/juri-ed-9'}>Jury</NavLink>
                 </li>
                 <li>
-                    <NavLink to={'/tvef-odds/tele'}>Tele</NavLink>
+                    <NavLink to={'/tvef-odds/tele-ed-9'}>Tele</NavLink>
                 </li>
             </ul>
         </div>

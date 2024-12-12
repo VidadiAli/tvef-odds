@@ -4,13 +4,17 @@ import { Route, Routes } from 'react-router-dom'
 
 import ResultFinal from './Result/ResultFinal'
 
-import Final from './Contest9/Final'
-import SF1 from './Contest9/SF1'
-import SF2 from './Contest9/SF2'
-import Juri from './Contest9/Juri'
-import Tele from './Contest9/Tele'
+import Final from './Contest10/Final'
+import SF1 from './Contest10/SF1'
+import SF2 from './Contest10/SF2'
+import Juri from './Contest10/Juri'
+import Tele from './Contest10/Tele'
 
-import Contest8 from './Contest8/Contest8'
+import Final10 from './Contest9/Final'
+import SF110 from './Contest9/SF1'
+import SF210 from './Contest9/SF2'
+import Juri10 from './Contest9/Juri'
+import Tele10 from './Contest9/Tele'
 
 import FinalSeven from './Contest7/FinalSeven'
 import SF1Seven from './Contest7/SF1Seven'
@@ -41,6 +45,12 @@ function App() {
         <Route path='/tvef-odds/semi-final-2' element={<SF2 />} />
         <Route path='/tvef-odds/juri' element={<Juri />} />
         <Route path='/tvef-odds/tele' element={<Tele />} />
+
+        <Route path='/tvef-odds/edition-9-final' element={<Final10 />} />
+        <Route path='/tvef-odds/semi-final-1-ed-9' element={<SF110 />} />
+        <Route path='/tvef-odds/semi-final-2-ed-9' element={<SF210 />} />
+        <Route path='/tvef-odds/juri-ed-9' element={<Juri10 />} />
+        <Route path='/tvef-odds/tele-ed-9' element={<Tele10 />} />
 
         <Route path='/tvef-odds/edition-7-final' element={<FinalSeven />} />
         <Route path='/tvef-odds/edition-7-sf-1' element={<SF1Seven />} />
