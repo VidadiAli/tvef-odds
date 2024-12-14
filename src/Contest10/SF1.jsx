@@ -119,14 +119,14 @@ const SF1 = () => {
                     {
                         finalData && finalData.map((e, index) => {
                             if (e.result != -2) {
-                                return <div key={e.id} className='box'>
+                                return <div key={e.id} className='box' >
                                     <span className='arrow'>{index + 1}
                                         {listOfDown.includes(e.id) ? <FaArrowDown className='arrows arrow-down' /> : ''}
 
                                         {listOfUp.includes(e.id) ? <FaArrowUp className='arrows arrow-up' /> : ''}
                                     </span>
                                     <img src={e.flag} alt="" />
-                                    <div>
+                                    <div style={{backgroundColor: `${index+1<=10? 'rgb(194, 238, 252)': 'white'}`}}>
                                         <span>{e.countryName}</span>
                                         <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
                                     </div>

@@ -125,7 +125,7 @@ const SF2 = () => {
                                         {listOfUp.includes(e.id) ? <FaArrowUp className='arrows arrow-up' /> : ''}
                                     </span>
                                     <img src={e.flag} alt="" />
-                                    <div>
+                                    <div style={{backgroundColor: `${index+1<=10? 'rgb(194, 238, 252)': 'white'}`}}>
                                         <span>{e.countryName}</span>
                                         <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
                                     </div>
