@@ -31,7 +31,7 @@ export const edition10 = {
             "singerName": "Nigar", "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Flag_of_the_Czech_Republic.svg/188px-Flag_of_the_Czech_Republic.svg.png",
             "result": true, "youtubeLink": "https://www.youtube.com/watch?v=pdost28z9u4",
-            "semi": 1, "puan1": 8, "puan2": 10
+            "semi": 1, "puan1": 8, "puan2": 7
         },
         {
             "id": "6", "countryName": "Australia", "singerName": "Husso", "musicName": "Mama",
@@ -79,7 +79,7 @@ export const edition10 = {
             "id": "13", "countryName": "Luxembourg", "singerName": "Elçin", "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Flag_of_Luxembourg.svg/800px-Flag_of_Luxembourg.svg.png",
             "result": true, "youtubeLink": "https://www.youtube.com/watch?v=V7T12RfzcSk",
-            "semi": 1, "puan1": 1, "puan2": 1.5
+            "semi": 1, "puan1": 1, "puan2": 1.1
         },
         {
             "id": "14", "countryName": "World", "singerName": "Tərlan", "musicName": "Mama",
@@ -103,7 +103,7 @@ export const edition10 = {
             "id": "17", "countryName": "New Caledonia", "singerName": "Khan Terrero", "musicName": "Mama",
             "flag": "https://www.flagsonline.it/uploads/2019-11-13/1200-0/Nouvelle-caledonie_Drapeau_Flag_Bandiera.jpg",
             "result": true, "youtubeLink": "https://www.youtube.com/watch?v=haOpAC8oljA",
-            "semi": 2, "puan1": 30, "puan2": 18
+            "semi": 2, "puan1": 9, "puan2": 9
         },
         {
             "id": "18", "countryName": "Finland", "singerName": "Fortem", "musicName": "Mama",
@@ -145,7 +145,7 @@ export const edition10 = {
             "id": "24", "countryName": "Sweden", "singerName": "Xedice", "musicName": "Mama",
             "flag": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Flag_of_Sweden.svg/188px-Flag_of_Sweden.svg.png",
             "result": true, "youtubeLink": "https://www.youtube.com/watch?v=YYplbww_XFQ",
-            "semi": 2, "puan1": 5, "puan2": 10
+            "semi": 2, "puan1": 1.3, "puan2": 1.4
         },
         {
             "id": "25", "countryName": "Portugal", "singerName": "FRAEL", "musicName": "Mama",

@@ -110,12 +110,12 @@ const SF1 = () => {
                         <span>and 7 others</span>
                     </dir>
 
-                    {/* <dir className="stop-odd">
+                    <dir className="stop-odd">
                         <div>
                             <h4>Closed event</h4>
                             <span>The odds will not be updated</span>
                         </div>
-                    </dir> */}
+                    </dir>
                     {
                         finalData && finalData.map((e, index) => {
                             if (e.result != -2) {
