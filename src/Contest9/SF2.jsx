@@ -115,28 +115,30 @@ const SF2 = () => {
                             <span>The odds will not be updated</span>
                         </div>
                     </dir>
-                    {
-                        finalData && finalData.map((e, index) => {
-                            if (e.result != -2) {
-                                return <div key={e.id} className='box'>
-                                    <span className='arrow'>{index + 1}
-                                        {listOfDown.includes(e.id) ? <FaArrowDown className='arrows arrow-down' /> : ''}
+                    <div className='box-main'>
+                        {
+                            finalData && finalData.map((e, index) => {
+                                if (e.result != -2) {
+                                    return <div key={e.id} className='box'>
+                                        <span className='arrow'>{index + 1}
+                                            {listOfDown.includes(e.id) ? <FaArrowDown className='arrows arrow-down' /> : ''}
 
-                                        {listOfUp.includes(e.id) ? <FaArrowUp className='arrows arrow-up' /> : ''}
-                                    </span>
-                                    <img src={e.flag} alt="" />
-                                    <div>
-                                        <span>{e.countryName}</span>
-                                        <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
+                                            {listOfUp.includes(e.id) ? <FaArrowUp className='arrows arrow-up' /> : ''}
+                                        </span>
+                                        <img src={e.flag} alt="" className='box-flag' />
+                                        <div className='link-box'>
+                                            <span>{e.countryName}</span>
+                                            <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
+                                        </div>
+                                        <span>{`${((200 / (e.puan1 + e.puan2))).toFixed(0) <= 98 ? ((200 / (e.puan1 + e.puan2))).toFixed(0) : '98'}%`}</span>
+                                        <span>{e.puan1}</span>
+                                        <span>{e.puan2}</span>
+                                        <span>{((e.puan1 + e.puan2) / 2) < 2 ? ((e.puan1 + e.puan2) / 2 + 0.03).toFixed(2) : (((e.puan1 + e.puan2) / 2).toFixed(1).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed(0) : ((e.puan1 + e.puan2) / 2).toFixed(1))}</span>
                                     </div>
-                                    <span>{`${((200 / (e.puan1 + e.puan2))).toFixed(0) <= 98 ? ((200 / (e.puan1 + e.puan2))).toFixed(0) : '98'}%`}</span>
-                                    <span>{e.puan1}</span>
-                                    <span>{e.puan2}</span>
-                                    <span>{((e.puan1 + e.puan2) / 2) < 2 ? ((e.puan1 + e.puan2) / 2 + 0.03).toFixed(2) : (((e.puan1 + e.puan2) / 2).toFixed(1).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed(0) : ((e.puan1 + e.puan2) / 2).toFixed(1))}</span>
-                                </div>
-                            }
-                        })
-                    }
+                                }
+                            })
+                        }
+                    </div>
                     <dir className="nq">
                         <h1>Finalist from Semi-Final 2</h1>
                         <div>

@@ -1,158 +1,76 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { mainUrl8 } from '../Data/Data'
-import { FaYoutube } from "react-icons/fa";
 import Contest8 from './Contest8'
+import Odds from '../Pages/Odds'
+import Participants from '../Pages/Participants'
+import axios from 'axios'
+import { mainUrl8 } from '../Data/Data'
 
 const FinalEight = () => {
-    const [finalData, setFinalData] = useState([]);
-    const [pointsData, setPointsData] = useState([]);
-    const [waitClass, setWaitClass] = useState('');
-
-    let counts = 0;
+    const [finalData, setFinalData] = useState([])
+    const [pointsData, setPointsData] = useState([])
+    const [waitClass, setWaitClass] = useState('')
+    let counts = 0
 
     const callData = async () => {
-        setWaitClass('wait-vote-adding');
-        const data = (await axios.get(`${mainUrl8}final`)).data;
-        setFinalData(data);
-
-        setWaitClass('');
-
-        data.forEach((element) => {
-            pointsData.push(element.puan1 + element.puan2);
-            setPointsData(pointsData)
-        });
+        setWaitClass('wait-vote-adding')
+        const data = (await axios.get(`${mainUrl8}final`)).data
+        setFinalData(data)
+        setWaitClass('')
+        data.forEach(el => pointsData.push(el.puan1 + el.puan2))
+        setPointsData([...pointsData])
     }
 
-
     useEffect(() => {
-        callData();
-    }, []);
+        callData()
+    }, [])
 
-
-
-    let amount = 0, mainIndex = 0, n = pointsData.length, leader;
+    let amount = 0, mainIndex = 0, n = pointsData.length, leader
     for (let j = 0; j < pointsData.length; j++) {
         for (let i = 0; i < n; i++) {
             if (pointsData[i] > amount) {
-                mainIndex = i;
-                amount = pointsData[i];
+                mainIndex = i
+                amount = pointsData[i]
             }
         }
-
-        let changeElement1 = pointsData[n - 1]
-        pointsData[n - 1] = pointsData[mainIndex]
-        pointsData[mainIndex] = changeElement1;
-
-        let changeElement2 = finalData[n - 1]
-        finalData[n - 1] = finalData[mainIndex]
-        finalData[mainIndex] = changeElement2;
-
-        leader = finalData[0].countryName;
-
-        n--;
+        [pointsData[n - 1], pointsData[mainIndex]] = [pointsData[mainIndex], pointsData[n - 1]]
+        [finalData[n - 1], finalData[mainIndex]] = [finalData[mainIndex], finalData[n - 1]]
+        leader = finalData[0]?.countryName
+        n--
         mainIndex = 0
         amount = 0
-    };
+    }
 
+    const total = pointsData.reduce((a, b) => a + b, 0)
 
-    let total = 0;
-    pointsData.forEach((e) => {
-        total += e;
-    });
-
-
-
-    // let mainTime;
-    // useEffect(() => {
-    //     let time1Ed8Final = 1, time2Ed8Final = 59;
-    //     mainTime = setInterval(() => {
-    //         document.getElementsByClassName('time')[0].textContent = `${time1Ed8Final}:${time2Ed8Final}`;
-    //         time2Ed8Final -= 1;
-    //         if (time2Ed8Final === 0) {
-    //             time1Ed8Final -= 1;
-    //             time2Ed8Final = 59;
-    //         }
-    //     }, 1000)
-
-    //     return () => clearInterval(mainTime)
-    // })
-
+    const indexArray = finalData.map(e => e.id)
+    const listOfUp = [], listOfDown = []
+    if (localStorage.getItem('indexArrayOfFinal')) {
+        const localArrayFinal = localStorage.getItem('indexArrayOfFinal').split(',')
+        indexArray.forEach(e => {
+            if (indexArray.indexOf(e) < localArrayFinal.indexOf(e)) listOfUp.push(e)
+            else if (indexArray.indexOf(e) > localArrayFinal.indexOf(e)) listOfDown.push(e)
+        })
+    }
+    localStorage.setItem('indexArrayOfFinal', indexArray)
 
     return (
         <>
             <Contest8 />
             <div className='contest-participants'>
-                <div className={`wait-vote ${waitClass}`}>
-                    <button >please wait ...</button>
-                    <button className='time'>Less than 2 minutes</button>
-                </div>
-                <div className='final'>
-                    <h2>Who will be winner of TVEF Edition 8?</h2>
-                    <dir>
-                        <span>Bookmakers have predicted</span>
-                        <h2> {leader}</h2>
-                    </dir>
-                    {
-                        finalData && finalData.map((e) => {
-                            if (e.result === 1) {
-                                { counts++ }
-                                return <div key={e.id} className='box'>
-                                    <span className='arrow'>{counts}</span>
-                                    <img src={e.flag} alt="" />
-                                    <div>
-                                        <span>{e.countryName} - </span>
-                                        <span>{e.singerName}</span>
-                                        <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
-                                    </div>
-                                    <span>{`${(((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) >= 1 ? (((total / (e.puan1 + e.puan2))) / finalData.length).toFixed(0) : '<1'}%`}</span>
-                                    <span>{e.puan1}</span>
-                                    <span>{e.puan2}</span>
-                                    <span>{e.puan1 + 0.5}</span>
-                                    <span>{((e.puan1 + e.puan2 / 2).toFixed(1)).endsWith(0) ? (e.puan1 + e.puan2 / 2).toFixed() : (e.puan1 + e.puan2 / 2).toFixed(1)}</span>
-                                    <span>{(((e.puan1 + e.puan2) / 2).toFixed(1)).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed() : ((e.puan1 + e.puan2) / 2).toFixed(1)}</span>
-                                </div>
-                            }
-                        })
-                    }
+                <div className={`wait-vote ${waitClass}`}><button>please wait ...</button></div>
 
-                    <dir className="nq">
-                        <h1>Not Qualify</h1>
-                        <div>
-                            {
-                                finalData && finalData.map((e) => {
-                                    if (e.result === 0) {
-                                        return <div key={e.id}>
-                                            <img src={e.flag} alt={`flag of ${e.countryName}`} />
-                                            {innerWidth > 500 ? <span>{e.countryName} - </span> : <span>{e.countryName}</span>}
-                                            <span>{e.singerName}</span>
-                                        </div>
-                                    }
-                                })
-                            }
-                        </div>
-                    </dir>
-                </div>
-                <div className='participants'>
-                    {
-                        finalData && finalData.map((e) => {
-                            if (e.result && e.youtubeLink != "") {
-                                return <div key={e.id} className='part-box'>
-                                    <span>{e.countryName}</span>
-                                    <div className='text-box'>
-                                        <span>{e.singerName}</span>
-                                    </div>
-                                    <div className='iframe-box'>
-                                        <div>
-                                            <iframe src={`${e.youtubeLink.slice(0, 24)}embed/${e.youtubeLink.slice(e.youtubeLink.length - 11, e.youtubeLink.length)}`} ></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-                        })
-                    }
-                </div>
-            </div >
+                <Odds
+                    finalData={finalData}
+                    pointsData={pointsData}
+                    leader={leader}
+                    listOfUp={listOfUp}
+                    listOfDown={listOfDown}
+                    total={total}
+                    edition={8}
+                />
+
+                <Participants finalData={finalData} />
+            </div>
         </>
     )
 }

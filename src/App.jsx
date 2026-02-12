@@ -7,8 +7,6 @@ import ResultFinal from './Result/ResultFinal'
 import Final from './Contest10/Final'
 import SF1 from './Contest10/SF1'
 import SF2 from './Contest10/SF2'
-import Juri from './Contest10/Juri'
-import Tele from './Contest10/Tele'
 
 import Final10 from './Contest9/Final'
 import SF110 from './Contest9/SF1'
@@ -43,8 +41,6 @@ function App() {
         <Route path='/tvef-odds/' element={<Final />} />
         <Route path='/tvef-odds/semi-final-1' element={<SF1 />} />
         <Route path='/tvef-odds/semi-final-2' element={<SF2 />} />
-        <Route path='/tvef-odds/juri' element={<Juri />} />
-        <Route path='/tvef-odds/tele' element={<Tele />} />
 
         <Route path='/tvef-odds/edition-9-final' element={<Final10 />} />
         <Route path='/tvef-odds/semi-final-1-ed-9' element={<SF110 />} />

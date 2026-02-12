@@ -1,38 +1,109 @@
 .head {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-.main-section>.head>h1,
-h2 {
-    padding: 0;
-    margin: 0;
-}
-
-.head>div {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-}
-
-.head>div>ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 0;
-}
-
-.head>div>ul>li>a {
-    padding: 3px 6px;
-    border: 1px solid red;
-    border-radius: 3px;
-}
-
-.head>div>ul>li>a:hover {
-    background-color: red;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    padding: 40px 20px;
     color: white;
+    text-align: center;
+}
+
+.head-container {
+    max-width: 100%;
+    margin: auto;
+}
+
+/* Logo */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo h1 {
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, #ff00cc, #3333ff);
+    -webkit-text-fill-color: transparent;
+}
+
+.logo-icon {
+    font-size: 42px;
+    color: #ff00cc;
+}
+
+/* Subtitle */
+
+.subtitle {
+    margin-top: 10px;
+    font-size: 18px;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.fire-icon {
+    color: #ff4500;
+}
+
+/* Navigation */
+
+.nav-menu {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    padding: 0;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    left: 0;
+    bottom: -6px;
+    background: linear-gradient(90deg, #ff00cc, #3333ff);
+    transition: 0.3s;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Active Link */
+
+.nav-menu a.active {
+    color: #ff00cc;
+}
+
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .logo h1 {
+        font-size: 34px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
