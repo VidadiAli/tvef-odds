@@ -10,8 +10,6 @@
     margin: auto;
 }
 
-/* Logo */
-
 .logo {
     display: flex;
     justify-content: center;
@@ -32,7 +30,6 @@
     color: #ff00cc;
 }
 
-/* Subtitle */
 
 .subtitle {
     margin-top: 10px;
@@ -48,7 +45,6 @@
     color: #ff4500;
 }
 
-/* Navigation */
 
 .nav-menu {
     margin-top: 40px;
@@ -68,8 +64,6 @@
     transition: 0.3s;
 }
 
-/* Hover effect */
-
 .nav-menu a::after {
     content: '';
     position: absolute;
@@ -85,7 +79,6 @@
     width: 100%;
 }
 
-/* Active Link */
 
 .nav-menu a.active {
     color: #ff00cc;
@@ -95,15 +88,12 @@
     width: 100%;
 }
 
-/* Responsive */
-
 @media (max-width: 768px) {
     .logo h1 {
         font-size: 34px;
     }
 
     .nav-menu {
-        flex-direction: column;
         gap: 20px;
     }
 }

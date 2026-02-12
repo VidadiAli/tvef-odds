@@ -7,9 +7,6 @@
     width: 90%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
-
-/* Title */
-
 .contest-title {
     display: flex;
     justify-content: center;
@@ -31,8 +28,6 @@
     font-size: 28px;
     color: #ff0080;
 }
-
-/* Navigation */
 
 .contest-nav {
     list-style: none;
@@ -58,7 +53,6 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hover */
 
 .contest-nav li a:hover {
     transform: translateY(-3px);
@@ -66,14 +60,11 @@
     box-shadow: 0 6px 20px rgba(255, 0, 128, 0.4);
 }
 
-/* Active */
-
 .contest-nav li a.active {
     background: linear-gradient(90deg, #ff0080, #7928ca);
     box-shadow: 0 6px 20px rgba(255, 0, 128, 0.6);
 }
 
-/* Responsive */
 
 @media (max-width: 768px) {
     .contest-nav {
