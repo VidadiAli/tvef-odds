@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaArrowUp, FaArrowDown, FaYoutube } from "react-icons/fa"
 
 const SemiOdds = ({ finalData, listOfDown, listOfUp, waitClass, leader1, leader2, leader3, edition, sf }) => {
+
+    useEffect(()=>{
+        console.log(finalData)
+    }, [finalData])
     return (
         <div className='contest-participants'>
             <div className={`wait-vote ${waitClass}`}><button>please wait ...</button></div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Contest10 from '../Contest10/Contest10'
 import Contest11 from '../Contest11/Contest11'
 import { edition11 } from '../JsFiles/Odds10'
 import SemiOdds from '../Pages/SemiOdds'
