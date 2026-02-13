@@ -9,8 +9,10 @@
     border-radius: 12px;
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 20px rgba(39, 7, 109, 0.5);
+    margin: 0 auto;
     margin-top: 40px;
     border: 1px solid rgba(255, 255, 255, 0.05);
+    width: 600px;
 }
 
 .more-element a {
@@ -58,5 +60,14 @@
 
     100% {
         background-position: 0% 50%;
+    }
+}
+
+
+@media(max-width: 800px) {
+    .more-element {
+        width: 100%;
+        padding: 1.8rem .5rem;
+        gap: .8rem;
     }
 }

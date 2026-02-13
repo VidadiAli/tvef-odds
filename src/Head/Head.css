@@ -89,6 +89,9 @@
 }
 
 @media (max-width: 768px) {
+    .head{
+        padding: 40px 10px;
+    }
     .logo h1 {
         font-size: 34px;
     }
