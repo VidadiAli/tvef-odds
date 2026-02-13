@@ -1,11 +1,9 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { mainUrl } from '../Data/Data'
-import { FaArrowUp } from "react-icons/fa";
-import { FaArrowDown } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
 import Contest9 from './Contest9';
 import { mainScoreBoard } from '../JsFiles/MainJs';
+import SemiOdds from '../Pages/SemiOdds';
 
 const SF1 = () => {
     const [finalData, setFinalData] = useState([]);
@@ -98,85 +96,8 @@ const SF1 = () => {
     return (
         <>
             <Contest9 />
-            <div className='contest-participants'>
-                <div className={`wait-vote ${waitClass}`}>
-                    <button >please wait ...</button>
-                </div>
-                <div className='final'>
-                    <h2>Who will qualify for the Final from Semi-final 1?</h2>
-                    <dir>
-                        <span>Bookmakers have predicted</span>
-                        <h2>{leader1}, {leader2}, {leader3}</h2>
-                        <span>and 7 others</span>
-                    </dir>
-
-                    <dir className="stop-odd">
-                        <div>
-                            <h4>Closed event</h4>
-                            <span>The odds will not be updated</span>
-                        </div>
-                    </dir>
-                    <div className='box-main'>
-                        {
-                            finalData && finalData.map((e, index) => {
-                                if (e.result != -2) {
-                                    return <div key={e.id} className='box'>
-                                        <span className='arrow'>{index + 1}
-                                            {listOfDown.includes(e.id) ? <FaArrowDown className='arrows arrow-down' /> : ''}
-
-                                            {listOfUp.includes(e.id) ? <FaArrowUp className='arrows arrow-up' /> : ''}
-                                        </span>
-                                        <img src={e.flag} alt="" className='box-flag'/>
-                                        <div className='link-box'>
-                                            <span>{e.countryName}</span>
-                                            <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink != "" ? <FaYoutube /> : ''}</a>
-                                        </div>
-                                        <span>{`${((200 / (e.puan1 + e.puan2))).toFixed(0) <= 98 ? ((200 / (e.puan1 + e.puan2))).toFixed(0) : '98'}%`}</span>
-                                        <span>{e.puan1}</span>
-                                        <span>{e.puan2}</span>
-                                        <span>{((e.puan1 + e.puan2) / 2) < 2 ? ((e.puan1 + e.puan2) / 2 + 0.03).toFixed(2) : (((e.puan1 + e.puan2) / 2).toFixed(1).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed(0) : ((e.puan1 + e.puan2) / 2).toFixed(1))}</span>
-                                    </div>
-                                }
-                            })
-                        }
-                    </div>
-                    <dir className="nq">
-                        <h1>Finalist from Semi-Final 1</h1>
-                        <div>
-                            {
-                                finalData && finalData.map((e) => {
-                                    if (e.result && e.result != -2) {
-                                        return <div key={e.id}>
-                                            <img src={e.flag} alt={`flag of ${e.countryName}`} />
-                                            {innerWidth > 500 ? <span>{e.countryName} - </span> : <span>{e.countryName}</span>}
-                                            
-                                        </div>
-                                    }
-                                })
-                            }
-                        </div>
-                    </dir>
-                </div>
-                <div className='participants'>
-                    {
-                        finalData && finalData.map((e) => {
-                            if (e.result && e.youtubeLink != "") {
-                                return <div key={e.id} className='part-box'>
-                                    <span>{e.countryName}</span>
-                                    <div className='text-box'>
-                                        <span>{e.singerName}</span>
-                                    </div>
-                                    <div className='iframe-box'>
-                                        <div>
-                                            <iframe src={`${e.youtubeLink.slice(0, 24)}embed/${e.youtubeLink.slice(e.youtubeLink.length - 11, e.youtubeLink.length)}`} ></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
-                        })
-                    }
-                </div>
-            </div>
+            <SemiOdds finalData={finalData} listOfDown={listOfDown} listOfUp={listOfUp}
+                waitClass={waitClass} leader1={leader1} leader2={leader2} leader3={leader3} edition={9} sf={1} />
         </>
     )
 }

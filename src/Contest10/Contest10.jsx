@@ -13,19 +13,19 @@ const Contest10 = () => {
 
             <ul className='contest-nav'>
                 <li>
-                    <NavLink to={'/tvef-odds/'}>
+                    <NavLink to={'/tvef-odds/edition-10-final'}>
                         <FaStar /> Final
                     </NavLink>
                 </li>
 
                 <li>
-                    <NavLink to={'/tvef-odds/semi-final-1'}>
+                    <NavLink to={'/tvef-odds/semi-final-1-ed-10'}>
                         <FaBroadcastTower /> Semi Final 1
                     </NavLink>
                 </li>
 
                 <li>
-                    <NavLink to={'/tvef-odds/semi-final-2'}>
+                    <NavLink to={'/tvef-odds/semi-final-2-ed-10'}>
                         <FaBroadcastTower /> Semi Final 2
                     </NavLink>
                 </li>

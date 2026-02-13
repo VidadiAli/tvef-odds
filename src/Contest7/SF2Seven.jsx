@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { FaArrowUp, FaArrowDown, FaYoutube } from "react-icons/fa";
 import Contest7 from './Contest7';
 import { mainUrl7 } from '../Data/Data'
+import SemiOdds from '../Pages/SemiOdds';
 
 const SF2Seven = () => {
     const [finalData, setFinalData] = useState([]);
@@ -77,62 +77,8 @@ const SF2Seven = () => {
     return (
         <>
             <Contest7 />
-            <div className='contest-participants'>
-                <div className={`wait-vote ${waitClass}`}>
-                    <button>please wait ...</button>
-                </div>
-                <div className='final'>
-                    <h2>Who will qualify for the Final from Semi-final 2?</h2>
-                    <div>
-                        <span>Bookmakers have predicted</span>
-                        <h2>{leader1}, {leader2}, {leader3}</h2>
-                        <span>and 7 others</span>
-                    </div>
-                    <div className='box-main'>
-                        {finalData && finalData.map((e, index) => (
-                            <div key={e.id} className='box'>
-                                <span className='arrow'>
-                                    {index + 1}
-                                    {listOfDown.includes(e.id) ? <FaArrowDown className='arrows arrow-down' /> : ''}
-                                    {listOfUp.includes(e.id) ? <FaArrowUp className='arrows arrow-up' /> : ''}
-                                </span>
-                                <img src={e.flag} alt="" className='box-flag'/>
-                                <div className='link-box'>
-                                    <span>{e.countryName}</span>
-                                    <a href={e.youtubeLink} className='youtube-link' target='_blank'>{e.youtubeLink ? <FaYoutube /> : ''}</a>
-                                </div>
-                                <span>{`${((200 / (e.puan1 + e.puan2))).toFixed(0) <= 98 ? ((200 / (e.puan1 + e.puan2))).toFixed(0) : '98'}%`}</span>
-                                <span>{e.puan1}</span>
-                                <span>{e.puan2}</span>
-                                <span>{((e.puan1 + e.puan2) / 2) < 2 ? ((e.puan1 + e.puan2) / 2 + 0.03).toFixed(2) : (((e.puan1 + e.puan2) / 2).toFixed(1).endsWith(0) ? ((e.puan1 + e.puan2) / 2).toFixed(0) : ((e.puan1 + e.puan2) / 2).toFixed(1))}</span>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="nq">
-                        <h1>Result of Semi-Final 2</h1>
-                        <div>
-                            {finalData && finalData.map((e) => e.result === 1 && (
-                                <div key={e.id}>
-                                    <img src={e.flag} alt={`flag of ${e.countryName}`} />
-                                    {innerWidth > 500 ? <span>{e.countryName} - </span> : <span>{e.countryName}</span>}
-                                   
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-                <div className='participants'>
-                    {finalData && finalData.map((e) => e.result && e.youtubeLink && (
-                        <div key={e.id} className='part-box'>
-                            <span>{e.countryName}</span>
-                            <div className='text-box'><span>{e.singerName}</span></div>
-                            <div className='iframe-box'>
-                                <iframe src={`${e.youtubeLink.slice(0, 24)}embed/${e.youtubeLink.slice(-11)}`}></iframe>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+            <SemiOdds finalData={finalData} listOfDown={listOfDown} listOfUp={listOfUp}
+                waitClass={waitClass} leader1={leader1} leader2={leader2} leader3={leader3} edition={7} sf={2} />
         </>
     )
 }

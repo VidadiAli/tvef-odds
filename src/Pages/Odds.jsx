@@ -1,9 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { FaArrowUp, FaArrowDown, FaYoutube } from "react-icons/fa"
 
 const Odds = ({ finalData, pointsData, leader, listOfUp, listOfDown, total, edition }) => {
     let counts = 0
-
     return (
         <div className='final'>
             <h2>Who will be winner of TVEF Edition {`${edition}`}?</h2>
@@ -12,15 +11,17 @@ const Odds = ({ finalData, pointsData, leader, listOfUp, listOfDown, total, edit
                 <h2>{leader}</h2>
             </dir>
 
-            <dir className="stop-odd">
-                <div>
-                    <h4>Closed event</h4>
-                    <span>The odds will not be updated</span>
-                </div>
-            </dir>
+            {
+                edition != 11 && <dir className="stop-odd">
+                    <div>
+                        <h4>Closed event</h4>
+                        <span>The odds will not be updated</span>
+                    </div>
+                </dir>
+            }
 
             <div className='box-main'>
-                {finalData && finalData.map((e) => {
+                {finalData && finalData?.map((e) => {
                     if (e.result) {
                         counts++
                         return (
@@ -58,7 +59,7 @@ const Odds = ({ finalData, pointsData, leader, listOfUp, listOfDown, total, edit
                                 <div key={e.id} className='qualify'>
                                     <img src={e.flag} alt={`flag of ${e.countryName}`} />
                                     {innerWidth > 500 ? <span>{e.countryName} - </span> : <span>{e.countryName}</span>}
-                                  
+
                                 </div>
                             )
                         }

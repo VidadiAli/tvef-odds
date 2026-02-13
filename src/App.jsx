@@ -4,15 +4,15 @@ import { Route, Routes } from 'react-router-dom'
 
 import ResultFinal from './Result/ResultFinal'
 
-import Final from './Contest10/Final'
-import SF1 from './Contest10/SF1'
-import SF2 from './Contest10/SF2'
+import Final10 from './Contest10/Final'
+import SF110 from './Contest10/SF1'
+import SF210 from './Contest10/SF2'
 
-import Final10 from './Contest9/Final'
-import SF110 from './Contest9/SF1'
-import SF210 from './Contest9/SF2'
-import Juri10 from './Contest9/Juri'
-import Tele10 from './Contest9/Tele'
+import Final9 from './Contest9/Final'
+import SF19 from './Contest9/SF1'
+import SF29 from './Contest9/SF2'
+import Juri9 from './Contest9/Juri'
+import Tele9 from './Contest9/Tele'
 
 import FinalSeven from './Contest7/FinalSeven'
 import SF1Seven from './Contest7/SF1Seven'
@@ -21,9 +21,10 @@ import FinalEight from './Contest8/FinalEight'
 import SF1Eight from './Contest8/SF1Eight'
 import SF2Eight from './Contest8/SF2Eight'
 
-
 import ResultSf1 from './Result/ResultSf1'
 import ResultSf2 from './Result/ResultSf2'
+import Final11 from './Contest11/Final11'
+import DynamicSemi from './Pages/DynamicSemi'
 
 
 
@@ -36,17 +37,24 @@ function App() {
       <Head />
 
       <Routes basename="/tvef-odds" >
-        <Route path='/tvef-odds/ed-9-result-final' element={<ResultFinal />} />
 
-        <Route path='/tvef-odds/' element={<Final />} />
-        <Route path='/tvef-odds/semi-final-1' element={<SF1 />} />
-        <Route path='/tvef-odds/semi-final-2' element={<SF2 />} />
+        <Route path='/tvef-odds/' element={<Final11 />} />
+        <Route path="/tvef-odds/heat-1" element={<DynamicSemi edition={11} sf={1} />} />
+        <Route path="/tvef-odds/heat-2" element={<DynamicSemi edition={11} sf={2} />} />
+        <Route path="/tvef-odds/heat-3" element={<DynamicSemi edition={11} sf={3} />} />
+        <Route path="/tvef-odds/heat-4" element={<DynamicSemi edition={11} sf={4} />} />
+        <Route path="/tvef-odds/heat-5" element={<DynamicSemi edition={11} sf={5} />} />
 
-        <Route path='/tvef-odds/edition-9-final' element={<Final10 />} />
-        <Route path='/tvef-odds/semi-final-1-ed-9' element={<SF110 />} />
-        <Route path='/tvef-odds/semi-final-2-ed-9' element={<SF210 />} />
-        <Route path='/tvef-odds/juri-ed-9' element={<Juri10 />} />
-        <Route path='/tvef-odds/tele-ed-9' element={<Tele10 />} />
+
+        <Route path='/tvef-odds/edition-10-final' element={<Final10 />} />
+        <Route path='/tvef-odds/semi-final-1-ed-10' element={<SF110 />} />
+        <Route path='/tvef-odds/semi-final-2-ed-10' element={<SF210 />} />
+
+        <Route path='/tvef-odds/edition-9-final' element={<Final9 />} />
+        <Route path='/tvef-odds/semi-final-1-ed-9' element={<SF19 />} />
+        <Route path='/tvef-odds/semi-final-2-ed-9' element={<SF29 />} />
+        <Route path='/tvef-odds/juri-ed-9' element={<Juri9 />} />
+        <Route path='/tvef-odds/tele-ed-9' element={<Tele9 />} />
 
         <Route path='/tvef-odds/edition-7-final' element={<FinalSeven />} />
         <Route path='/tvef-odds/edition-7-sf-1' element={<SF1Seven />} />
@@ -57,9 +65,8 @@ function App() {
         <Route path='/tvef-odds/edition-8-sf-1' element={<SF1Eight />} />
         <Route path='/tvef-odds/edition-8-sf-2' element={<SF2Eight />} />
 
-
+        <Route path='/tvef-odds/ed-9-result-final' element={<ResultFinal />} />
         <Route path='/tvef-odds/ed-9-result-sf1' element={<ResultSf1 />} />
-
         <Route path='/tvef-odds/ed-9-result-sf2' element={<ResultSf2 />} />
 
       </Routes>
