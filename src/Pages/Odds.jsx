@@ -51,14 +51,14 @@ const Odds = ({ finalData, pointsData, leader, listOfUp, listOfDown, total, edit
 
             <dir className="nq">
                 <h1>Not Qualify</h1>
-                <div>
+                <div className='box-of-quality'>
                     {finalData && finalData.map((e) => {
                         if (!e.result) {
                             return (
-                                <div key={e.id}>
+                                <div key={e.id} className='qualify'>
                                     <img src={e.flag} alt={`flag of ${e.countryName}`} />
                                     {innerWidth > 500 ? <span>{e.countryName} - </span> : <span>{e.countryName}</span>}
-                                    <span>{e.singerName}</span>
+                                  
                                 </div>
                             )
                         }

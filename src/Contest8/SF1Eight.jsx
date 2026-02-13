@@ -115,7 +115,7 @@ const SF1Eight = () => {
                                 <div key={e.id}>
                                     <img src={e.flag} alt={`flag of ${e.countryName}`} />
                                     {innerWidth > 500 ? <span>{e.countryName} - </span> : <span>{e.countryName}</span>}
-                                    <span>{e.singerName}</span>
+                                
                                 </div>
                             ))}
                         </div>
